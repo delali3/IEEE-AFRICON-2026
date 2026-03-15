@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration - IEEE AFRICON 2026</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    /* ---- Registration page specific styles ---- */
+    .reg-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+    }
+
+    .reg-section-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--text-dark);
+      margin: 30px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Large REGISTER NOW button */
+    .btn-register-now {
+      display: inline-block;
+      background: var(--ieee-blue);
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 28px 80px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 10px 0 30px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-register-now:hover {
+      background: var(--ieee-dark-blue);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Reg fee tables */
+    .reg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .reg-table th {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      font-weight: bold;
+      text-align: left;
+    }
+    .reg-table td {
+      border: 1px solid #ccc;
+      padding: 9px 14px;
+      vertical-align: top;
+    }
+    .reg-table tr:nth-child(even) td { background: #fafafa; }
+
+    .reg-table-note {
+      border: 1px solid #ccc;
+      border-top: none;
+      padding: 10px 14px;
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+
+    /* Notes / lists */
+    .reg-note-list {
+      margin: 0 0 16px 22px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .reg-para {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .reg-para strong { font-weight: bold; }
+
+    .reg-link {
+      color: var(--ieee-blue);
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .reg-link:hover { text-decoration: underline; }
+
+    hr.reg-divider {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 28px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar"><div class="container">
+  <a href="https://www.ieee.org" target="_blank">IEEE.org</a>
+  <a href="https://ieeexplore.ieee.org" target="_blank">IEEE <em>Xplore</em> Digital Library</a>
+  <a href="https://standards.ieee.org" target="_blank">IEEE Standards</a>
+  <a href="https://spectrum.ieee.org" target="_blank">IEEE Spectrum</a>
+  <a href="https://www.ieee.org/sitemap.html" target="_blank">More Sites</a>
+</div></div>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <div class="header-logo">
+      <svg width="90" height="80" viewBox="0 0 90 80" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="18" font-family="Arial" font-size="13" font-weight="bold" fill="#00497a">IEEE</text>
+        <path d="M30,10 C28,10 25,12 24,15 C22,18 22,22 23,26 C22,28 20,30 20,34 C20,38 22,42 24,45 C26,50 28,55 30,60 C32,65 33,70 34,72 C35,74 36,74 37,72 C38,70 40,66 41,62 C43,57 45,52 47,48 C49,44 51,40 51,36 C51,32 49,28 47,25 C45,22 44,18 43,15 C42,12 40,10 38,10 Z" fill="#2d6a2d"/>
+        <text x="5" y="75" font-family="Arial" font-size="11" font-weight="bold" fill="#2d6a2d">AFRICON</text>
+        <text x="5" y="88" font-family="Arial" font-size="13" font-weight="bold" fill="#00497a">2026</text>
+      </svg>
+      <div class="header-tagline">
+        <span class="venue">Kigali Convention Centre, Kigali, Rwanda &nbsp;||&nbsp; November 18–20, 2026</span>
+        <span class="theme">Innovating Africa's Future Through Technology</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="search-icon"><i class="fa fa-search"></i></button>
+      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="21,2 40,21 21,40 2,21" fill="#1a1a1a"/>
+        <text x="21" y="26" font-family="Arial" font-size="10" font-weight="bold" fill="white" text-anchor="middle">IEEE</text>
+      </svg>
+    </div>
+  </div>
+  <div class="search-box"><div class="container"><input type="text" placeholder="Search IEEE AFRICON 2026..." /></div></div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="program.html">Program</a></li>
+      <li><a href="authors.html">Authors</a></li>
+      <li><a href="registration.html" class="active">Registration</a></li>
+      <li><a href="sponsors.html">Sponsors/Exhibitors</a></li>
+      <li><a href="venue.html">Venue &amp; Travel</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="committees.html">Committees</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="reg-content">
+
+  <!-- ===== REGISTRATION FEES heading ===== -->
+  <p class="reg-section-title">Registration Fees</p>
+
+  <!-- REGISTER NOW button -->
+  <div>
+    <a href="#" class="btn-register-now">Register Now</a>
+  </div>
+
+  <!-- Accommodation -->
+  <p class="reg-section-title">Accommodation</p>
+  <p class="reg-para">
+    Please check out the accommodation options on the <a href="venue.html#accommodation" class="reg-link">Accommodations Page</a>.<br />
+    If you need any further advice or clarifications please <a href="contact.html" class="reg-link">contact us</a>
+  </p>
+
+  <hr class="reg-divider" />
+
+  <!-- ===== AFRICON 2026 PROGRAM ===== -->
+  <p class="reg-section-title">AFRICON 2026 Program</p>
+  <p class="reg-para">The 2026 IEEE AFRICON Program will include;</p>
+  <ol class="reg-note-list">
+    <li>Technical Paper Presentations</li>
+    <li>Plenary Sessions</li>
+    <li>Panel Sessions</li>
+    <li>Tutorials</li>
+    <li>Workshops</li>
+    <li>Exhibitions</li>
+    <li>Tours in and around Kigali and Rwanda</li>
+  </ol>
+
+  <hr class="reg-divider" />
+
+  <!-- ===== NOTE TO ALL ATTENDEES ===== -->
+  <p class="reg-section-title">Note to All Attendees</p>
+
+  <p class="reg-para"><strong>Registration fees include:</strong></p>
+
+  <p class="reg-para">
+    A <strong>full registration</strong> includes access to all parts of the conference: Keynotes, Panels, Workshops, Tutorials, Exhibitions, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full technical program and proceedings.
+  </p>
+
+  <p class="reg-para">
+    A <strong>limited registration</strong> includes access to some parts of the conference: Keynotes, Panels, Exhibitions, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full Technical program and proceedings.<br />
+    <strong>NB: Does not include Workshops and Tutorials</strong>
+  </p>
+
+  <p class="reg-para">
+    A <strong>tutorials only registration</strong> includes access to the workshops, tutorials and exhibitions only plus Coffee breaks and lunches on the days of attendance.
+  </p>
+
+  <hr class="reg-divider" />
+
+  <!-- ===== NOTE TO ALL AUTHORS ===== -->
+  <p class="reg-section-title">Note to All Authors</p>
+
+  <ol class="reg-note-list">
+    <li>All paper presenters shall pay <strong>FULL</strong> registration fees for the conference.</li>
+    <li>For authors with multiple accepted papers, one full registration is valid for <strong>one (1)</strong> paper. One author registration will cover the publication expenses of only <strong>One</strong> accepted paper. For each additional accepted paper associated to the same registration (up to 3 papers per registration), $50 USD will be charged per additional paper.</li>
+    <li>Authors presenting more than 3 papers must pay an <strong>additional FULL</strong> registration for all the papers. For each additional accepted paper associated to the same registration, a $50 USD fee will be charged.</li>
+    <li>Where two people want to present papers, each person must pay full registration as per number 2 above depending on the number of papers to be presented.</li>
+    <li>To be published in the IEEE Africon 2026 Conference Proceedings and to be eligible for publication in IEEE Xplore, at least one author of an accepted paper is required to register for the conference at the FULL (member or non-member) rate and present the paper.</li>
+    <li>Non-IEEE Student Members will pay the Non-Member rate.</li>
+  </ol>
+
+  <p class="reg-section-title" style="font-size:13px; text-transform:none; letter-spacing:0;">Student Authors</p>
+  <p class="reg-para">
+    In order for a paper to be published, at least one of the authors from each paper must pay the full author registration fee and attend the conference to present the paper.
+  </p>
+
+  <hr class="reg-divider" />
+
+  <!-- ===== REGISTRATION FEES ===== -->
+  <p class="reg-section-title">Registration Fees</p>
+
+  <!-- AUTHOR FULL CONFERENCE REGISTRATION -->
+  <p class="reg-section-title" style="margin-top:10px;">Author Full Conference Registration</p>
+
+  <table class="reg-table">
+    <thead>
+      <tr>
+        <th>Categories</th>
+        <th>Early Bird, up to 31st of August, 2026</th>
+        <th>Regular Fee, from 1st September, 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IEEE Member</td>
+        <td>$ 342.00</td>
+        <td>$ 378.00</td>
+      </tr>
+      <tr>
+        <td>Non IEEE Member</td>
+        <td>$ 410.00</td>
+        <td>$ 460.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Student Member</td>
+        <td>$ 242.00</td>
+        <td>$ 260.00</td>
+      </tr>
+      <tr>
+        <td>Non IEEE Student Member</td>
+        <td>$ 310.00</td>
+        <td>$ 342.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Life Member</td>
+        <td>$ 250.00</td>
+        <td>$ 250.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Additional Paper Cost per author and each paper (more than one (1) paper)</strong></td>
+        <td>$ 50.00</td>
+        <td>$ 50.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="reg-table-note">
+    <strong>Author Full Conference Registration</strong> entitles you to access to all parts of the conference: Keynotes, Panels, Workshops, Tutorials, Exhibitions, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full Technical program and proceedings.
+  </div>
+
+  <!-- AUTHOR LIMITED CONFERENCE REGISTRATION -->
+  <p class="reg-section-title">Author Limited Conference Registration</p>
+
+  <table class="reg-table">
+    <thead>
+      <tr>
+        <th>Categories</th>
+        <th>Early Bird, up to 31st of August, 2026</th>
+        <th>Regular Fee, from 1st September, 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IEEE Member</td>
+        <td>$ 325.00</td>
+        <td>$ 410.00</td>
+      </tr>
+      <tr>
+        <td>Non IEEE Member</td>
+        <td>$ 370.00</td>
+        <td>$ 430.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Student Member (author not presenting)</td>
+        <td>$ 250.00</td>
+        <td>$ 275.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Life Member</td>
+        <td>$ 225.00</td>
+        <td>$ 225.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Additional Paper Cost per author (more than 2 papers)</strong></td>
+        <td>$ 50.00</td>
+        <td>$ 50.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="reg-table-note">
+    <strong>Author Limited Conference Registration</strong> entitles you to access to most parts of the conference: Keynotes, Panels, Exhibitions, Special fora, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full Technical program and proceedings.<br />
+    <strong>NB: Does not include Workshops and Tutorials</strong>
+  </div>
+
+  <!-- NON-AUTHOR FULL CONFERENCE REGISTRATION -->
+  <p class="reg-section-title">Non-Author Full Conference Registration</p>
+
+  <table class="reg-table">
+    <thead>
+      <tr>
+        <th>Categories</th>
+        <th>Early Bird, up to 31st of August, 2026</th>
+        <th>Regular Fee, from 1st September, 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IEEE Member</td>
+        <td>$ 300.00</td>
+        <td>$ 325.00</td>
+      </tr>
+      <tr>
+        <td>Non IEEE Member</td>
+        <td>$ 320.00</td>
+        <td>$ 380.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Student Member</td>
+        <td>$ 200.00</td>
+        <td>$ 225.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Life Member</td>
+        <td>$ 200.00</td>
+        <td>$ 200.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="reg-table-note">
+    <strong>Non-Author Full Conference Registration</strong> entitles you to access to all parts of the conference: Keynotes, Panels, Workshops, Tutorials, Exhibitions, Special fora, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full Technical program and proceedings.
+  </div>
+
+  <!-- NON-AUTHOR LIMITED CONFERENCE REGISTRATION -->
+  <p class="reg-section-title">Non-Author Limited Conference Registration</p>
+
+  <table class="reg-table">
+    <thead>
+      <tr>
+        <th>Categories</th>
+        <th>Early Bird, upto 31st of August, 2026</th>
+        <th>Regular Fee, from 1st September, 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IEEE Member</td>
+        <td>$ 175.00</td>
+        <td>$ 225.00</td>
+      </tr>
+      <tr>
+        <td>Non IEEE Member</td>
+        <td>$ 210.00</td>
+        <td>$ 270.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Student Member</td>
+        <td>$ 125.00</td>
+        <td>$ 150.00</td>
+      </tr>
+      <tr>
+        <td>IEEE Life Member</td>
+        <td>$ 125.00</td>
+        <td>$ 125.00</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="reg-table-note">
+    <strong>Non-Author Limited Conference Registration</strong> entitles you to access to most parts of the conference: Keynotes, Panels, Exhibitions, Special fora, Welcome Reception, Coffee breaks, lunches, (1) Conference Banquet ticket, and the full Technical program and proceedings.<br />
+    <strong>NB: Does not include Workshops and Tutorials</strong>
+  </div>
+
+  <hr class="reg-divider" />
+
+  <!-- GUEST REGISTRATION -->
+  <p class="reg-section-title">Guest Registration</p>
+
+  <p class="reg-para"><strong>Guest registration Fee is $50</strong></p>
+
+  <p class="reg-para">A guest must be tied to an attendee who has registered fully with one of the other registrations.</p>
+  <p class="reg-para">All Guests who are registered for the conference will be given a &ldquo;GUEST&rdquo; badge.</p>
+  <p class="reg-para">Guest registrants may attend the Welcoming Reception and Conference Banquet.</p>
+  <p class="reg-para"><strong>NB: Guest registrants will not be allowed to attend any conference sessions.</strong></p>
+
+  <hr class="reg-divider" />
+
+  <!-- EXHIBITION BOOTH ATTENDEE REGISTRATION -->
+  <p class="reg-section-title">Exhibition Booth Attendee Registration</p>
+
+  <p class="reg-para">Each Exhibitor will be awarded one (1) free complimentary full registration.</p>
+
+  <p class="reg-para"><strong>Additional booth attendee Registration Fee is $100</strong></p>
+
+  <hr class="reg-divider" />
+
+  <p class="reg-para" style="margin-top:20px;">
+    For any queries regarding registration for the conference, travel and accommodation, please
+    <a href="contact.html" class="reg-link">contact the Registration and International Liaison Team</a>
+  </p>
+
+</div><!-- end .reg-content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="sitemap.html">Sitemap</a>
+    <a href="accessibility.html">Accessibility</a>
+    <a href="nondiscrimination.html">Nondiscrimination Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+    <a href="https://www.ieee.org/security/privacy-policy.html" target="_blank">IEEE Privacy Policy</a>
+  </nav>
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      &copy; Copyright 2026 IEEE &ndash; All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions.<br />
+      A public charity, IEEE is the world&rsquo;s largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+    </p>
+    <div class="footer-social">
+      <a href="#" aria-label="Google Plus"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Share"><i class="fas fa-share-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="back-to-top" style="opacity:0;">
+  <span class="cookie-icon"><i class="fas fa-circle-dot"></i></span>Back to Top
+</a>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
