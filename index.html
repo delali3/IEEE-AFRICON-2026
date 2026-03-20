@@ -1,483 +1,739 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IEEE AFRICON 2026 - Home</title>
-  <meta name="description" content="IEEE AFRICON 2026 – The 18th edition of the biennial IEEE AFRICON conference. Innovating Africa's Future Through Technology." />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .slide-1 {
-      background-image: linear-gradient(135deg, #1a5276 0%, #117a65 100%);
-    }
-    .slide-2 {
-      background-image: linear-gradient(135deg, #154360 0%, #1a5276 100%);
-    }
-    .slide-3 {
-      background-image: linear-gradient(135deg, #0b3d25 0%, #1a5276 100%);
-    }
-    .slide-4 {
-      background-image: linear-gradient(135deg, #17202a 0%, #1a5276 100%);
-    }
-    .slide-5 {
-      background-image: linear-gradient(135deg, #4a235a 0%, #006699 100%);
-    }
-    .slide-6 {
-      background-image: linear-gradient(135deg, #1b4f72 0%, #148f77 100%);
-    }
-    .slide-7 {
-      background-image: linear-gradient(135deg, #1a3a1a 0%, #006699 100%);
-    }
-    .slide-8 {
-      background-image: linear-gradient(135deg, #154360 0%, #0e6655 100%);
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IEEE AFRICON 2026 - Home</title>
+    <meta
+      name="description"
+      content="IEEE AFRICON 2026 – The 18th edition of the biennial IEEE AFRICON conference. Innovating Africa's Future Through Technology."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Slider slides with background image */
+      .slide {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
 
-    .mini-slide-1 {
-      background-image: linear-gradient(135deg, #1c2833 0%, #2e4057 100%);
-    }
+      .slide-1,
+      .slide-2,
+      .slide-3,
+      .slide-4,
+      .slide-5,
+      .slide-6,
+      .slide-7,
+      .slide-8 {
+        background-image: url('assets/images/1.jpeg');
+      }
 
-    /* Logo SVG inline styles */
-    .logo-africa-map {
-      fill: #2d6a2d;
-    }
+      .mini-slide-1 {
+        background-image: url('assets/images/1.jpeg');
+      }
 
-    /* Important dates box */
-    .info-box {
-      background: #f0f8ff;
-      border-left: 4px solid var(--ieee-blue);
-      padding: 16px 20px;
-      margin: 20px 0;
-      font-size: 13px;
-    }
+      /* Logo SVG inline styles */
+      .logo-africa-map {
+        fill: #2d6a2d;
+      }
 
-    .info-box h3 {
-      font-size: 14px;
-      font-weight: bold;
-      color: var(--ieee-blue);
-      margin-bottom: 10px;
-    }
+      /* Important dates box */
+      .info-box {
+        background: #f0f8ff;
+        border-left: 4px solid var(--ieee-blue);
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+      }
 
-    .info-box ul {
-      list-style: none;
-      padding: 0;
-    }
+      .info-box h3 {
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--ieee-blue);
+        margin-bottom: 10px;
+      }
 
-    .info-box ul li {
-      padding: 4px 0;
-      border-bottom: 1px dotted #ccc;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
+      .info-box ul {
+        list-style: none;
+        padding: 0;
+      }
 
-    .info-box ul li:last-child {
-      border-bottom: none;
-    }
+      .info-box ul li {
+        padding: 4px 0;
+        border-bottom: 1px dotted #ccc;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
 
-    .info-box ul li .date-label {
-      font-weight: bold;
-      color: var(--text-dark);
-    }
+      .info-box ul li:last-child {
+        border-bottom: none;
+      }
 
-    .info-box ul li .date-val {
-      color: var(--ieee-blue);
-      font-weight: bold;
-      white-space: nowrap;
-    }
-  </style>
-</head>
-<body>
+      .info-box ul li .date-label {
+        font-weight: bold;
+        color: var(--text-dark);
+      }
 
-<!-- ===== TOP BAR ===== -->
-<div class="top-bar">
-  <div class="container">
-    <a href="https://www.ieee.org" target="_blank" rel="noopener">IEEE.org</a>
-    <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener">IEEE <em>Xplore</em> Digital Library</a>
-    <a href="https://standards.ieee.org" target="_blank" rel="noopener">IEEE Standards</a>
-    <a href="https://spectrum.ieee.org" target="_blank" rel="noopener">IEEE Spectrum</a>
-    <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">More Sites</a>
-  </div>
-</div>
-
-<!-- ===== HEADER ===== -->
-<header class="site-header" id="top">
-  <div class="header-inner">
-    <!-- Logo Block -->
-    <div class="header-logo">
-      <div class="header-tagline">
-        <span class="venue">Kigali Convention Centre, Kigali, Rwanda &nbsp;||&nbsp; November 18–20, 2026</span>
-        <span class="theme">Innovating Africa's Future Through Technology</span>
+      .info-box ul li .date-val {
+        color: var(--ieee-blue);
+        font-weight: bold;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+      <div class="container">
+        <a href="https://www.ieee.org" target="_blank" rel="noopener"
+          >IEEE.org</a
+        >
+        <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener"
+          >IEEE <em>Xplore</em> Digital Library</a
+        >
+        <a href="https://standards.ieee.org" target="_blank" rel="noopener"
+          >IEEE Standards</a
+        >
+        <a href="https://spectrum.ieee.org" target="_blank" rel="noopener"
+          >IEEE Spectrum</a
+        >
+        <a
+          href="https://www.ieee.org/sitemap.html"
+          target="_blank"
+          rel="noopener"
+          >More Sites</a
+        >
       </div>
     </div>
 
-    <!-- Right: Search + IEEE logo -->
-    <div class="header-right">
-      <button class="search-icon" aria-label="Toggle search">
-        <i class="fa fa-search"></i>
-      </button>
-      <!-- IEEE diamond logo (SVG) -->
-      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" aria-label="IEEE">
-        <polygon points="21,2 40,21 21,40 2,21" fill="#1a1a1a"/>
-        <text x="21" y="26" font-family="Arial" font-size="10" font-weight="bold" fill="white" text-anchor="middle">IEEE</text>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Search Box (hidden by default) -->
-  <div class="search-box">
-    <div class="container">
-      <input type="text" placeholder="Search IEEE AFRICON 2026..." aria-label="Search" />
-    </div>
-  </div>
-</header>
-
-<!-- ===== NAVIGATION ===== -->
-<nav class="main-nav" aria-label="Main navigation">
-  <div class="container">
-    <ul class="nav-list">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <a href="about.html#conference">About the Conference</a>
-          <a href="about.html#organizers">Organizers</a>
-          <a href="about.html#history">History</a>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <!-- Logo Block -->
+        <div class="header-logo">
+          <div class="header-tagline">
+            <span class="venue"
+              >Kigali Convention Centre, Kigali, Rwanda &nbsp;||&nbsp; November
+              18–20, 2026</span
+            >
+            <span class="theme"
+              >Innovating Africa's Future Through Technology</span
+            >
+          </div>
         </div>
-      </li>
-      <li>
-        <a href="program.html">Program</a>
-        <div class="dropdown">
-          <a href="program.html#technical">Technical Program</a>
-          <a href="program.html#keynote">Keynote Speakers</a>
-          <a href="program.html#workshops">Workshops &amp; Tutorials</a>
-          <a href="program.html#schedule">Schedule</a>
+
+        <!-- Right: Search + IEEE logo -->
+        <div class="header-right">
+          <button class="search-icon" aria-label="Toggle search">
+            <i class="fa fa-search"></i>
+          </button>
+          <!-- IEEE diamond logo (SVG) -->
+          <svg
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="IEEE"
+          >
+            <polygon points="21,2 40,21 21,40 2,21" fill="#1a1a1a" />
+            <text
+              x="21"
+              y="26"
+              font-family="Arial"
+              font-size="10"
+              font-weight="bold"
+              fill="white"
+              text-anchor="middle"
+            >
+              IEEE
+            </text>
+          </svg>
         </div>
-      </li>
-      <li>
-        <a href="authors.html">Authors</a>
-        <div class="dropdown">
-          <a href="authors.html#cfp">Call for Papers</a>
-          <a href="authors.html#submission">Paper Submission</a>
-          <a href="authors.html#guidelines">Author Guidelines</a>
-          <a href="authors.html#dates">Important Dates</a>
-        </div>
-      </li>
-      <li>
-        <a href="registration.html">Registration</a>
-        <div class="dropdown">
-          <a href="registration.html#fees">Registration Fees</a>
-          <a href="registration.html#register">Register Now</a>
-          <a href="registration.html#visa">Visa Information</a>
-        </div>
-      </li>
-      <li>
-        <a href="sponsors.html">Sponsors/Exhibitors</a>
-        <div class="dropdown">
-          <a href="sponsors.html#sponsors">Our Sponsors</a>
-          <a href="sponsors.html#exhibitors">Exhibitors</a>
-          <a href="sponsors.html#opportunities">Sponsorship Opportunities</a>
-        </div>
-      </li>
-      <li>
-        <a href="venue.html">Venue &amp; Travel</a>
-        <div class="dropdown">
-          <a href="venue.html#venue">Conference Venue</a>
-          <a href="venue.html#accommodation">Accommodation</a>
-          <a href="venue.html#travel">Getting There</a>
-          <a href="venue.html#kigali">About Kigali</a>
-        </div>
-      </li>
-      <li>
-        <a href="speakers.html">Speakers</a>
-        <div class="dropdown">
-          <a href="speakers.html#keynote">Keynote Speakers</a>
-          <a href="speakers.html#invited">Invited Speakers</a>
-        </div>
-      </li>
-      <li>
-        <a href="committees.html">Committees</a>
-        <div class="dropdown">
-          <a href="committees.html#organizing">Organizing Committee</a>
-          <a href="committees.html#technical">Technical Program Committee</a>
-          <a href="committees.html#steering">Steering Committee</a>
-        </div>
-      </li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===== HERO SLIDER ===== -->
-<section class="hero-slider" aria-label="Homepage slideshow">
-
-  <div class="slide slide-1 active">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Welcome to Africon 2026</h1>
-      <p>18-20 November 2026, Kigali Convention Centre, Kigali, Rwanda</p>
-      <a href="authors.html#submission" class="btn-submit">Submit Your Paper Now</a>
-    </div>
-  </div>
-
-  <div class="slide slide-2">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Innovating Africa's Future Through Technology</h1>
-      <p>The 18th Edition of the Biennial IEEE AFRICON Conference</p>
-      <a href="about.html" class="btn-submit">Learn More</a>
-    </div>
-  </div>
-
-  <div class="slide slide-3">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Call for Papers</h1>
-      <p>Submit your research across AI, Communications, Power Systems, Cybersecurity &amp; more</p>
-      <a href="authors.html#cfp" class="btn-submit">View Call for Papers</a>
-    </div>
-  </div>
-
-  <div class="slide slide-4">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Kigali, Rwanda</h1>
-      <p>Experience the vibrant &amp; innovative capital of Africa at the heart of AFRICON 2026</p>
-      <a href="venue.html" class="btn-submit">Venue &amp; Travel</a>
-    </div>
-  </div>
-
-  <div class="slide slide-5">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Keynote Speakers</h1>
-      <p>World-class plenary presentations by leading researchers and industry experts</p>
-      <a href="speakers.html" class="btn-submit">Meet Our Speakers</a>
-    </div>
-  </div>
-
-  <div class="slide slide-6">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Registration Now Open</h1>
-      <p>Secure your spot at the premier IEEE conference on the African continent</p>
-      <a href="registration.html" class="btn-submit">Register Now</a>
-    </div>
-  </div>
-
-  <div class="slide slide-7">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Workshops &amp; Tutorials</h1>
-      <p>Hands-on sessions covering emerging and cutting-edge technologies</p>
-      <a href="program.html#workshops" class="btn-submit">View Program</a>
-    </div>
-  </div>
-
-  <div class="slide slide-8">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <h1>Sponsors &amp; Exhibitors</h1>
-      <p>Partner with us to showcase your innovations to Africa's brightest minds</p>
-      <a href="sponsors.html" class="btn-submit">Sponsorship Opportunities</a>
-    </div>
-  </div>
-
-  <!-- Arrows -->
-  <button class="slider-arrow prev" aria-label="Previous slide">&#8249;</button>
-  <button class="slider-arrow next" aria-label="Next slide">&#8250;</button>
-
-  <!-- Dots & play/pause -->
-  <div class="slider-dots">
-    <div class="slider-controls-row">
-      <button class="slider-play-pause" aria-label="Play/Pause slideshow">❚❚</button>
-      <button class="dot active" aria-label="Slide 1"></button>
-      <button class="dot" aria-label="Slide 2"></button>
-      <button class="dot" aria-label="Slide 3"></button>
-      <button class="dot" aria-label="Slide 4"></button>
-      <button class="dot" aria-label="Slide 5"></button>
-      <button class="dot" aria-label="Slide 6"></button>
-      <button class="dot" aria-label="Slide 7"></button>
-      <button class="dot" aria-label="Slide 8"></button>
-    </div>
-  </div>
-</section>
-
-<!-- ===== MAIN CONTENT ===== -->
-<main class="main-content">
-
-  <!-- Two-column messages -->
-  <div class="two-col">
-
-    <!-- Left: Technical Program Chair message -->
-    <div class="col">
-      <h2>Message from the Technical Program Chair &mdash; 2026 IEEE AFRICON Conference</h2>
-
-      <p>Dear Authors, Researchers, and Distinguished Participants,</p>
-
-      <p>It is my honour to welcome you to the 2026 IEEE AFRICON Conference in Kigali, Rwanda. This year's technical program reflects outstanding scholarship, innovation, and collaboration across the electrical and computer engineering disciplines.</p>
-
-      <p>We are pleased to announce that paper submissions are now open. We invite researchers from universities, industry partners, and research institutions across Africa and around the globe to submit their finest work for peer review.</p>
-
-      <p>All submitted papers will undergo rigorous blind peer review by a diverse and experienced team of reviewers drawn from across the world. Accepted papers will be published in the IEEE Xplore Digital Library.</p>
-
-      <p>We extend our heartfelt appreciation to the reviewers, track chairs, and technical committee members for their diligence and professionalism throughout the selection process.</p>
-
-      <p>Whether you are attending physically or participating online, we encourage you to take full advantage of the technical sessions, engage in meaningful dialogue, and build networks that advance engineering research on the continent.</p>
-
-      <p>We wish you a productive, enriching, and memorable AFRICON 2026 experience.</p>
-
-      <div class="signature">
-        Warm regards,<br />
-        <strong>Prof. [TBD], Ph.D., SMIEEE</strong><br />
-        Technical Program Chair<br />
-        IEEE AFRICON 2026
       </div>
 
-      <!-- Important Dates Box -->
-      <div class="info-box" style="margin-top:28px;">
-        <h3><i class="fa fa-calendar"></i> &nbsp; Important Dates</h3>
-        <ul>
+      <!-- Search Box (hidden by default) -->
+      <div class="search-box">
+        <div class="container">
+          <input
+            type="text"
+            placeholder="Search IEEE AFRICON 2026..."
+            aria-label="Search"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
           <li>
-            <span class="date-label">Paper Submission Opens</span>
-            <span class="date-val">01 March 2026</span>
+            <a href="about.html">About</a>
+            <div class="dropdown">
+              <a href="about.html#conference">About the Conference</a>
+              <a href="about.html#organizers">Organizers</a>
+              <a href="about.html#history">History</a>
+            </div>
           </li>
           <li>
-            <span class="date-label">Full Paper Submission Deadline</span>
-            <span class="date-val">30 June 2026</span>
+            <a href="program.html">Program</a>
+            <div class="dropdown">
+              <a href="program.html#technical">Technical Program</a>
+              <a href="program.html#keynote">Keynote Speakers</a>
+              <a href="program.html#workshops">Workshops &amp; Tutorials</a>
+              <a href="program.html#schedule">Schedule</a>
+            </div>
           </li>
           <li>
-            <span class="date-label">Notification of Acceptance</span>
-            <span class="date-val">15 August 2026</span>
+            <a href="authors.html">Authors</a>
+            <div class="dropdown">
+              <a href="authors.html#cfp">Call for Papers</a>
+              <a href="authors.html#submission">Paper Submission</a>
+              <a href="authors.html#guidelines">Author Guidelines</a>
+              <a href="authors.html#dates">Important Dates</a>
+            </div>
           </li>
           <li>
-            <span class="date-label">Camera-Ready Paper Deadline</span>
-            <span class="date-val">15 September 2026</span>
+            <a href="registration.html">Registration</a>
+            <div class="dropdown">
+              <a href="registration.html#fees">Registration Fees</a>
+              <a href="registration.html#register">Register Now</a>
+              <a href="registration.html#visa">Visa Information</a>
+            </div>
           </li>
           <li>
-            <span class="date-label">Author Registration Deadline</span>
-            <span class="date-val">30 September 2026</span>
+            <a href="sponsors.html">Sponsors/Exhibitors</a>
+            <div class="dropdown">
+              <a href="sponsors.html#sponsors">Our Sponsors</a>
+              <a href="sponsors.html#exhibitors">Exhibitors</a>
+              <a href="sponsors.html#opportunities"
+                >Sponsorship Opportunities</a
+              >
+            </div>
           </li>
           <li>
-            <span class="date-label">Conference Dates</span>
-            <span class="date-val">18–20 Nov 2026</span>
+            <a href="venue.html">Venue &amp; Travel</a>
+            <div class="dropdown">
+              <a href="venue.html#venue">Conference Venue</a>
+              <a href="venue.html#accommodation">Accommodation</a>
+              <a href="venue.html#travel">Getting There</a>
+              <a href="venue.html#kigali">About Kigali</a>
+            </div>
           </li>
+          <li>
+            <a href="speakers.html">Speakers</a>
+            <div class="dropdown">
+              <a href="speakers.html#keynote">Keynote Speakers</a>
+              <a href="speakers.html#invited">Invited Speakers</a>
+            </div>
+          </li>
+          <li>
+            <a href="committees.html">Committees</a>
+            <div class="dropdown">
+              <a href="committees.html#organizing">Organizing Committee</a>
+              <a href="committees.html#technical"
+                >Technical Program Committee</a
+              >
+              <a href="committees.html#steering">Steering Committee</a>
+            </div>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
-    </div>
+    </nav>
 
-    <!-- Right: General Chair welcome -->
-    <div class="col">
-      <h2>Welcome Message from General Chair</h2>
-
-      <p>On behalf of the Organizing Committee, I would like to welcome you to the 18<sup>th</sup> edition of the IEEE AFRICON 2026 conference to be held at the Kigali Convention Centre in Kigali, Rwanda from November 18<sup>th</sup> to 20<sup>th</sup>, 2026. The conference theme is &ldquo;<em>Innovating Africa&rsquo;s Future Through Technology</em>&rdquo;.</p>
-
-      <p>The conference provides a platform for students, researchers and the industry worldwide to meet, network and pursue collaboration opportunities. The conference will also provide a forum to share research findings and ideas. The thematic research areas include Artificial and Computational Intelligence, Cloud Computing and Data Analytics, Wireless Communication Systems, Antennas, Microwave Systems and Propagation Models, Integrated Sensing &amp; Communication and IoT, Power Engineering &amp; Energy Systems and Cybersecurity.</p>
-
-      <p>The 18<sup>th</sup> edition of IEEE Africon 2026 continues the proud tradition of fostering world-class research across the continent. All submitted papers will be subjected to blind peer review. Papers will be reviewed by a diverse and experienced team of reviewers drawn across the world.</p>
-
-      <p>In addition to plenary presentations, the conference will consist of keynote speakers and invited presentations by leading experts in electrical and computer engineering.</p>
-
-      <p>IEEE Region 8 has also organized a couple of workshops, plenary sessions and presentations one may look forward to.</p>
-
-      <p>I would like to express my heartfelt appreciation for the sacrifice, hard work and dedication of all the committees which are working tirelessly to ensure the success of the conference, the Technical Program Committee, Local Organising Committee, and the publication committee and other teams.</p>
-
-      <p>In closing, as we innovate Africa&rsquo;s future through technology, let us explore new ways of advancing humanity as a global research community.</p>
-
-      <div class="signature">
-        <strong>Prof. [TBD], Ph.D., FIEEE</strong><br />
-        General Chair<br />
-        IEEE AFRICON 2026
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== VENUE + ABOUT SECTION ===== -->
-  <div class="venue-section">
-
-    <!-- Left: Venue slider -->
-    <div>
-      <h2>Kigali Convention Centre, Rwanda</h2>
-      <div class="mini-slider" aria-label="Venue images">
-        <div class="mini-slide mini-slide-1 active" style="background:linear-gradient(135deg,#1b3a4b 0%,#006699 100%); display:flex; align-items:center; justify-content:center;">
-          <p style="color:white; font-size:15px; text-align:center; padding:20px;">
-            <i class="fa fa-building" style="font-size:48px; display:block; margin-bottom:12px; opacity:0.8;"></i>
-            Kigali Convention Centre<br/><span style="font-size:12px; opacity:0.8;">Kigali, Rwanda</span>
-          </p>
-        </div>
-        <div class="mini-slide" style="background:linear-gradient(135deg,#154360 0%,#0e6655 100%); display:flex; align-items:center; justify-content:center;">
-          <p style="color:white; font-size:15px; text-align:center; padding:20px;">
-            <i class="fa fa-map-marker-alt" style="font-size:48px; display:block; margin-bottom:12px; opacity:0.8;"></i>
-            Heart of Kigali City<br/><span style="font-size:12px; opacity:0.8;">Rwanda, East Africa</span>
-          </p>
-        </div>
-        <div class="mini-slide" style="background:linear-gradient(135deg,#1a4d1a 0%,#006699 100%); display:flex; align-items:center; justify-content:center;">
-          <p style="color:white; font-size:15px; text-align:center; padding:20px;">
-            <i class="fa fa-globe-africa" style="font-size:48px; display:block; margin-bottom:12px; opacity:0.8;"></i>
-            The City of a Thousand Hills<br/><span style="font-size:12px; opacity:0.8;">Kigali, Rwanda</span>
-          </p>
-        </div>
-        <div class="mini-slider-controls">
-          <button class="mini-btn mini-play" aria-label="Play">&#9654;</button>
-          <button class="mini-btn mini-pause" aria-label="Pause">&#10074;&#10074;</button>
-          <span class="mini-dot"></span>
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero-slider" aria-label="Homepage slideshow">
+      <div class="slide slide-1 active">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Welcome to Africon 2026</h1>
+          <p>18-20 November 2026, Kigali Convention Centre, Kigali, Rwanda</p>
+          <a href="authors.html#submission" class="btn-submit"
+            >Submit Your Paper Now</a
+          >
         </div>
       </div>
-    </div>
 
-    <!-- Right: About AFRICON 2026 -->
-    <div>
-      <h2>About IEEE AFRICON 2026</h2>
-      <p>
-        The conference will be organized by the IEEE South Africa Section in collaboration with the IEEE Rwanda Subsection. The event will be hosted at the Kigali Convention Centre, Kigali, Rwanda from the 18<sup>th</sup> to 20<sup>th</sup> of November 2026, under the theme &ldquo;Innovating Africa&rsquo;s Future Through Technology&rdquo;.
-      </p>
-      <p>
-        This conference will feature world-class plenary speakers, technical symposiums, industry and academic panels, workshops, tutorials, and invited tracks on emerging technologies. IEEE AFRICON 2026 is co-sponsored by IEEE Region 8 and the IEEE South Africa Section and is the flagship conference for the African continent.
-      </p>
-      <p>
-        This will be the 18<sup>th</sup> Edition of the biennial conference which was previously held in Nairobi, Kenya (1983), Abidjan, Ivory Coast (1987), Mbabane, Swaziland (1992), Stellenbosch, South Africa (1996), Cape Town, South Africa (1999), George, South Africa (2002), Gaborone, Botswana (2004), Windhoek, Namibia (2007), Nairobi, Kenya (2009), Livingston, Zambia (2011), Mauritius (2013), Addis Ababa, Ethiopia (2015), Cape Town, South Africa (2017), Accra, Ghana (2019), Arusha, Tanzania (2021), Nairobi, Kenya (2023), and Polokwane, South Africa (2025).
-      </p>
-    </div>
-  </div>
+      <div class="slide slide-2">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Innovating Africa's Future Through Technology</h1>
+          <p>The 18th Edition of the Biennial IEEE AFRICON Conference</p>
+          <a href="about.html" class="btn-submit">Learn More</a>
+        </div>
+      </div>
 
-</main>
+      <div class="slide slide-3">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Call for Papers</h1>
+          <p>
+            Submit your research across AI, Communications, Power Systems,
+            Cybersecurity &amp; more
+          </p>
+          <a href="authors.html#cfp" class="btn-submit">View Call for Papers</a>
+        </div>
+      </div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="index.html">Home</a>
-    <a href="sitemap.html">Sitemap</a>
-    <a href="accessibility.html">Accessibility</a>
-    <a href="nondiscrimination.html">Nondiscrimination Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="https://www.ieee.org/security/privacy-policy.html" target="_blank" rel="noopener">IEEE Privacy Policy</a>
-  </nav>
+      <div class="slide slide-4">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Kigali, Rwanda</h1>
+          <p>
+            Experience the vibrant &amp; innovative capital of Africa at the
+            heart of AFRICON 2026
+          </p>
+          <a href="venue.html" class="btn-submit">Venue &amp; Travel</a>
+        </div>
+      </div>
 
-  <div class="footer-bottom">
-    <p class="footer-copy">
-      &copy; Copyright 2026 IEEE &ndash; All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions.<br />
-      A public charity, IEEE is the world&rsquo;s largest technical professional organization dedicated to advancing technology for the benefit of humanity.
-    </p>
+      <div class="slide slide-5">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Keynote Speakers</h1>
+          <p>
+            World-class plenary presentations by leading researchers and
+            industry experts
+          </p>
+          <a href="speakers.html" class="btn-submit">Meet Our Speakers</a>
+        </div>
+      </div>
 
-    <div class="footer-social" aria-label="Social media links">
-      <a href="#" aria-label="Google Plus"><i class="fab fa-google-plus-g"></i></a>
-      <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="Share"><i class="fas fa-share-alt"></i></a>
-    </div>
-  </div>
-</footer>
+      <div class="slide slide-6">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Registration Now Open</h1>
+          <p>
+            Secure your spot at the premier IEEE conference on the African
+            continent
+          </p>
+          <a href="registration.html" class="btn-submit">Register Now</a>
+        </div>
+      </div>
 
-<!-- Back to Top -->
-<a href="#top" class="back-to-top" aria-label="Back to top" style="opacity:0;">
-  <span class="cookie-icon"><i class="fas fa-circle-dot"></i></span>
-  Back to Top
-</a>
+      <div class="slide slide-7">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Workshops &amp; Tutorials</h1>
+          <p>
+            Hands-on sessions covering emerging and cutting-edge technologies
+          </p>
+          <a href="program.html#workshops" class="btn-submit">View Program</a>
+        </div>
+      </div>
 
-<script src="assets/js/main.js"></script>
-</body>
+      <div class="slide slide-8">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Sponsors &amp; Exhibitors</h1>
+          <p>
+            Partner with us to showcase your innovations to Africa's brightest
+            minds
+          </p>
+          <a href="sponsors.html" class="btn-submit"
+            >Sponsorship Opportunities</a
+          >
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button class="slider-arrow prev" aria-label="Previous slide">
+        &#8249;
+      </button>
+      <button class="slider-arrow next" aria-label="Next slide">&#8250;</button>
+
+      <!-- Dots & play/pause -->
+      <div class="slider-dots">
+        <div class="slider-controls-row">
+          <button class="slider-play-pause" aria-label="Play/Pause slideshow">
+            ❚❚
+          </button>
+          <button class="dot active" aria-label="Slide 1"></button>
+          <button class="dot" aria-label="Slide 2"></button>
+          <button class="dot" aria-label="Slide 3"></button>
+          <button class="dot" aria-label="Slide 4"></button>
+          <button class="dot" aria-label="Slide 5"></button>
+          <button class="dot" aria-label="Slide 6"></button>
+          <button class="dot" aria-label="Slide 7"></button>
+          <button class="dot" aria-label="Slide 8"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+      <!-- Two-column messages -->
+      <div class="two-col">
+        <!-- Left: Technical Program Chair message -->
+        <div class="col">
+          <h2>
+            Message from the Technical Program Chair &mdash; 2026 IEEE AFRICON
+            Conference
+          </h2>
+
+          <p>Dear Authors, Researchers, and Distinguished Participants,</p>
+
+          <p>
+            It is my honour to welcome you to the 2026 IEEE AFRICON Conference
+            in Kigali, Rwanda. This year's technical program reflects
+            outstanding scholarship, innovation, and collaboration across the
+            electrical and computer engineering disciplines.
+          </p>
+
+          <p>
+            We are pleased to announce that paper submissions are now open. We
+            invite researchers from universities, industry partners, and
+            research institutions across Africa and around the globe to submit
+            their finest work for peer review.
+          </p>
+
+          <p>
+            All submitted papers will undergo rigorous blind peer review by a
+            diverse and experienced team of reviewers drawn from across the
+            world. Accepted papers will be published in the IEEE Xplore Digital
+            Library.
+          </p>
+
+          <p>
+            We extend our heartfelt appreciation to the reviewers, track chairs,
+            and technical committee members for their diligence and
+            professionalism throughout the selection process.
+          </p>
+
+          <p>
+            Whether you are attending physically or participating online, we
+            encourage you to take full advantage of the technical sessions,
+            engage in meaningful dialogue, and build networks that advance
+            engineering research on the continent.
+          </p>
+
+          <p>
+            We wish you a productive, enriching, and memorable AFRICON 2026
+            experience.
+          </p>
+
+          <div class="signature">
+            Warm regards,<br />
+            <strong>Prof. [TBD], Ph.D., SMIEEE</strong><br />
+            Technical Program Chair<br />
+            IEEE AFRICON 2026
+          </div>
+
+          <!-- Important Dates Box -->
+          <div class="info-box" style="margin-top: 28px">
+            <h3><i class="fa fa-calendar"></i> &nbsp; Important Dates</h3>
+            <ul>
+              <li>
+                <span class="date-label">Paper Submission Opens</span>
+                <span class="date-val">01 March 2026</span>
+              </li>
+              <li>
+                <span class="date-label">Full Paper Submission Deadline</span>
+                <span class="date-val">30 June 2026</span>
+              </li>
+              <li>
+                <span class="date-label">Notification of Acceptance</span>
+                <span class="date-val">15 August 2026</span>
+              </li>
+              <li>
+                <span class="date-label">Camera-Ready Paper Deadline</span>
+                <span class="date-val">15 September 2026</span>
+              </li>
+              <li>
+                <span class="date-label">Author Registration Deadline</span>
+                <span class="date-val">30 September 2026</span>
+              </li>
+              <li>
+                <span class="date-label">Conference Dates</span>
+                <span class="date-val">18–20 Nov 2026</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: General Chair welcome -->
+        <div class="col">
+          <h2>Welcome Message from General Chair</h2>
+
+          <p>
+            On behalf of the Organizing Committee, I would like to welcome you
+            to the 18<sup>th</sup> edition of the IEEE AFRICON 2026 conference
+            to be held at the Kigali Convention Centre in Kigali, Rwanda from
+            November 18<sup>th</sup> to 20<sup>th</sup>, 2026. The conference
+            theme is &ldquo;<em
+              >Innovating Africa&rsquo;s Future Through Technology</em
+            >&rdquo;.
+          </p>
+
+          <p>
+            The conference provides a platform for students, researchers and the
+            industry worldwide to meet, network and pursue collaboration
+            opportunities. The conference will also provide a forum to share
+            research findings and ideas. The thematic research areas include
+            Artificial and Computational Intelligence, Cloud Computing and Data
+            Analytics, Wireless Communication Systems, Antennas, Microwave
+            Systems and Propagation Models, Integrated Sensing &amp;
+            Communication and IoT, Power Engineering &amp; Energy Systems and
+            Cybersecurity.
+          </p>
+
+          <p>
+            The 18<sup>th</sup> edition of IEEE Africon 2026 continues the proud
+            tradition of fostering world-class research across the continent.
+            All submitted papers will be subjected to blind peer review. Papers
+            will be reviewed by a diverse and experienced team of reviewers
+            drawn across the world.
+          </p>
+
+          <p>
+            In addition to plenary presentations, the conference will consist of
+            keynote speakers and invited presentations by leading experts in
+            electrical and computer engineering.
+          </p>
+
+          <p>
+            IEEE Region 8 has also organized a couple of workshops, plenary
+            sessions and presentations one may look forward to.
+          </p>
+
+          <p>
+            I would like to express my heartfelt appreciation for the sacrifice,
+            hard work and dedication of all the committees which are working
+            tirelessly to ensure the success of the conference, the Technical
+            Program Committee, Local Organising Committee, and the publication
+            committee and other teams.
+          </p>
+
+          <p>
+            In closing, as we innovate Africa&rsquo;s future through technology,
+            let us explore new ways of advancing humanity as a global research
+            community.
+          </p>
+
+          <div class="signature">
+            <strong>Prof. [TBD], Ph.D., FIEEE</strong><br />
+            General Chair<br />
+            IEEE AFRICON 2026
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== VENUE + ABOUT SECTION ===== -->
+      <div class="venue-section">
+        <!-- Left: Venue slider -->
+        <div>
+          <h2>Kigali Convention Centre, Rwanda</h2>
+          <div class="mini-slider" aria-label="Venue images">
+            <div
+              class="mini-slide mini-slide-1 active"
+              style="
+                background: linear-gradient(135deg, #1b3a4b 0%, #006699 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <p
+                style="
+                  color: white;
+                  font-size: 15px;
+                  text-align: center;
+                  padding: 20px;
+                "
+              >
+                <i
+                  class="fa fa-building"
+                  style="
+                    font-size: 48px;
+                    display: block;
+                    margin-bottom: 12px;
+                    opacity: 0.8;
+                  "
+                ></i>
+                Kigali Convention Centre<br /><span
+                  style="font-size: 12px; opacity: 0.8"
+                  >Kigali, Rwanda</span
+                >
+              </p>
+            </div>
+            <div
+              class="mini-slide"
+              style="
+                background: linear-gradient(135deg, #154360 0%, #0e6655 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <p
+                style="
+                  color: white;
+                  font-size: 15px;
+                  text-align: center;
+                  padding: 20px;
+                "
+              >
+                <i
+                  class="fa fa-map-marker-alt"
+                  style="
+                    font-size: 48px;
+                    display: block;
+                    margin-bottom: 12px;
+                    opacity: 0.8;
+                  "
+                ></i>
+                Heart of Kigali City<br /><span
+                  style="font-size: 12px; opacity: 0.8"
+                  >Rwanda, East Africa</span
+                >
+              </p>
+            </div>
+            <div
+              class="mini-slide"
+              style="
+                background: linear-gradient(135deg, #1a4d1a 0%, #006699 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <p
+                style="
+                  color: white;
+                  font-size: 15px;
+                  text-align: center;
+                  padding: 20px;
+                "
+              >
+                <i
+                  class="fa fa-globe-africa"
+                  style="
+                    font-size: 48px;
+                    display: block;
+                    margin-bottom: 12px;
+                    opacity: 0.8;
+                  "
+                ></i>
+                The City of a Thousand Hills<br /><span
+                  style="font-size: 12px; opacity: 0.8"
+                  >Kigali, Rwanda</span
+                >
+              </p>
+            </div>
+            <div class="mini-slider-controls">
+              <button class="mini-btn mini-play" aria-label="Play">
+                &#9654;
+              </button>
+              <button class="mini-btn mini-pause" aria-label="Pause">
+                &#10074;&#10074;
+              </button>
+              <span class="mini-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: About AFRICON 2026 -->
+        <div>
+          <h2>About IEEE AFRICON 2026</h2>
+          <p>
+            The conference will be organized by the IEEE South Africa Section in
+            collaboration with the IEEE Rwanda Subsection. The event will be
+            hosted at the Kigali Convention Centre, Kigali, Rwanda from the
+            18<sup>th</sup> to 20<sup>th</sup> of November 2026, under the theme
+            &ldquo;Innovating Africa&rsquo;s Future Through Technology&rdquo;.
+          </p>
+          <p>
+            This conference will feature world-class plenary speakers, technical
+            symposiums, industry and academic panels, workshops, tutorials, and
+            invited tracks on emerging technologies. IEEE AFRICON 2026 is
+            co-sponsored by IEEE Region 8 and the IEEE South Africa Section and
+            is the flagship conference for the African continent.
+          </p>
+          <p>
+            This will be the 18<sup>th</sup> Edition of the biennial conference
+            which was previously held in Nairobi, Kenya (1983), Abidjan, Ivory
+            Coast (1987), Mbabane, Swaziland (1992), Stellenbosch, South Africa
+            (1996), Cape Town, South Africa (1999), George, South Africa (2002),
+            Gaborone, Botswana (2004), Windhoek, Namibia (2007), Nairobi, Kenya
+            (2009), Livingston, Zambia (2011), Mauritius (2013), Addis Ababa,
+            Ethiopia (2015), Cape Town, South Africa (2017), Accra, Ghana
+            (2019), Arusha, Tanzania (2021), Nairobi, Kenya (2023), and
+            Polokwane, South Africa (2025).
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="nondiscrimination.html">Nondiscrimination Policy</a>
+        <a href="terms.html">Terms and Conditions</a>
+        <a
+          href="https://www.ieee.org/security/privacy-policy.html"
+          target="_blank"
+          rel="noopener"
+          >IEEE Privacy Policy</a
+        >
+      </nav>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; Copyright 2026 IEEE &ndash; All rights reserved. Use of this
+          website signifies your agreement to the IEEE Terms and Conditions.<br />
+          A public charity, IEEE is the world&rsquo;s largest technical
+          professional organization dedicated to advancing technology for the
+          benefit of humanity.
+        </p>
+
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Google Plus"
+            ><i class="fab fa-google-plus-g"></i
+          ></a>
+          <a href="#" aria-label="Twitter / X"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="Share"><i class="fas fa-share-alt"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a
+      href="#top"
+      class="back-to-top"
+      aria-label="Back to top"
+      style="opacity: 0"
+    >
+      <span class="cookie-icon"><i class="fas fa-circle-dot"></i></span>
+      Back to Top
+    </a>
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
