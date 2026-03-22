@@ -19,6 +19,24 @@
   --white: #ffffff;
 }
 
+.header-logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .africon-logo {
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+      .ieee-logo {
+        height: 42px;
+        width: auto;
+        object-fit: contain;
+      }
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
