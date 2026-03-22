@@ -1,4 +1,4 @@
-/* ===== IEEE AFRICON 2026 - Main JavaScript ===== */
+/* ===== IEEE AFRICON 2027 - Main JavaScript ===== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
