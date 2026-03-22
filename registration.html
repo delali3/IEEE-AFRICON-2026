@@ -101,6 +101,463 @@
       border-top: 1px solid #ddd;
       margin: 28px 0;
     }
+
+    :root {
+      --ieee-blue: #006699;
+      --ieee-dark: #00334d;
+      --ieee-light: #e8f4fa;
+      --accent: #00b4d8;
+      --accent2: #f59e0b;
+      --text: #1a2a35;
+      --muted: #6b7f8c;
+      --border: #c5d8e3;
+      --bg: #f4f8fb;
+      --white: #ffffff;
+      --error: #e53e3e;
+      --success: #38a169;
+      --step-done: #38a169;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ─── PAGE STUB (mimics the real page) ─── */
+    .page-stub {
+      padding: 40px 20px 80px;
+      text-align: center;
+    }
+    .page-stub h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 28px;
+      color: var(--ieee-dark);
+      margin-bottom: 10px;
+    }
+    .page-stub p { color: var(--muted); margin-bottom: 30px; font-size: 15px; }
+
+    .btn-register-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ieee-blue);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 20px 60px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(0,102,153,0.28);
+    }
+    .btn-register-now:hover {
+      background: var(--ieee-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,102,153,0.38);
+    }
+
+    /* ─── OVERLAY ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,30,50,0.62);
+      backdrop-filter: blur(4px);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.open { display: flex; animation: fadeIn 0.22s ease; }
+    @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+
+    /* ─── MODAL BOX ─── */
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 760px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,30,50,0.38);
+      animation: slideUp 0.28s cubic-bezier(.34,1.3,.64,1);
+    }
+    @keyframes slideUp { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:translateY(0) } }
+
+    /* ─── MODAL HEADER ─── */
+    .modal-header {
+      background: linear-gradient(135deg, var(--ieee-dark) 0%, var(--ieee-blue) 100%);
+      padding: 22px 28px 20px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .modal-header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .modal-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .modal-subtitle {
+      font-size: 12px;
+      color: rgba(255,255,255,0.72);
+      margin-top: 3px;
+      letter-spacing: 0.3px;
+    }
+    .modal-close {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      border-radius: 50%;
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.3); }
+
+    /* ─── STEP PROGRESS ─── */
+    .step-bar {
+      display: flex;
+      align-items: center;
+      margin-top: 18px;
+      gap: 0;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .step-circle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .step-circle.active {
+      border-color: var(--accent2);
+      background: var(--accent2);
+      color: #fff;
+      box-shadow: 0 0 0 4px rgba(245,158,11,0.25);
+    }
+    .step-circle.done {
+      border-color: var(--step-done);
+      background: var(--step-done);
+      color: #fff;
+    }
+    .step-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.55);
+      margin-left: 6px;
+      white-space: nowrap;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .step-label.active { color: rgba(255,255,255,0.95); }
+    .step-connector {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      margin: 0 6px;
+    }
+    .step-connector.done { background: var(--step-done); }
+
+    /* ─── MODAL BODY ─── */
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .modal-body::-webkit-scrollbar { width: 5px; }
+    .modal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ─── STEP PANELS ─── */
+    .step-panel { display: none; animation: panelIn 0.22s ease; }
+    .step-panel.active { display: block; }
+    @keyframes panelIn { from { opacity:0; transform:translateX(12px) } to { opacity:1; transform:translateX(0) } }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ieee-light);
+    }
+    .section-head-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--ieee-blue);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ieee-dark);
+    }
+    .section-head p { font-size: 12px; color: var(--muted); }
+
+    /* ─── FORM GRID ─── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+    }
+    .form-grid .full { grid-column: 1 / -1; }
+
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ieee-dark);
+      letter-spacing: 0.2px;
+    }
+    .form-group label .req { color: var(--error); margin-left: 2px; }
+
+    .form-control {
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      padding: 9px 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.18s, box-shadow 0.18s;
+      width: 100%;
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--ieee-blue);
+      box-shadow: 0 0 0 3px rgba(0,102,153,0.1);
+    }
+    .form-control::placeholder { color: #b0bec5; }
+
+    textarea.form-control { resize: vertical; min-height: 72px; }
+    select.form-control { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7f8c' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+
+    /* Radio & Toggle groups */
+    .radio-group, .toggle-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .radio-pill, .toggle-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s;
+      color: var(--text);
+      background: var(--white);
+      user-select: none;
+    }
+    .radio-pill input, .toggle-pill input { display: none; }
+    .radio-pill:hover, .toggle-pill:hover { border-color: var(--ieee-blue); color: var(--ieee-blue); }
+    .radio-pill.selected, .toggle-pill.selected {
+      border-color: var(--ieee-blue);
+      background: var(--ieee-blue);
+      color: #fff;
+    }
+    .radio-pill .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      transition: background 0.15s;
+    }
+    .radio-pill.selected .dot { background: #fff; border-color: #fff; }
+
+    /* Binary Yes/No */
+    .yn-group { display: flex; gap: 8px; }
+    .yn-btn {
+      flex: 1;
+      padding: 9px;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.18s;
+      background: var(--white);
+      color: var(--muted);
+    }
+    .yn-btn:hover { border-color: var(--ieee-blue); color: var(--ieee-blue); }
+    .yn-btn.yes.active { border-color: var(--success); background: var(--success); color: #fff; }
+    .yn-btn.no.active { border-color: var(--error); background: var(--error); color: #fff; }
+
+    /* Upload zone */
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 22px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .upload-zone:hover { border-color: var(--ieee-blue); background: var(--ieee-light); }
+    .upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    .upload-icon { font-size: 28px; color: var(--ieee-blue); margin-bottom: 6px; }
+    .upload-text { font-size: 13px; color: var(--muted); }
+    .upload-text span { color: var(--ieee-blue); font-weight: 600; }
+    .upload-filename { font-size: 12px; color: var(--success); margin-top: 6px; display: none; }
+
+    /* Co-authors dynamic */
+    .coauthor-list { display: flex; flex-direction: column; gap: 8px; }
+    .coauthor-entry {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .coauthor-entry .form-control { flex: 1; }
+    .btn-remove-coauthor {
+      background: none; border: none; color: var(--error);
+      font-size: 16px; cursor: pointer; padding: 4px 6px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .btn-remove-coauthor:hover { background: #fff0f0; }
+    .btn-add-coauthor {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1.5px dashed var(--ieee-blue);
+      border-radius: 7px;
+      color: var(--ieee-blue);
+      font-size: 12.5px;
+      font-weight: 600;
+      background: none;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.15s;
+    }
+    .btn-add-coauthor:hover { background: var(--ieee-light); }
+
+    /* Info note */
+    .form-note {
+      background: var(--ieee-light);
+      border-left: 3px solid var(--ieee-blue);
+      border-radius: 0 7px 7px 0;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: var(--ieee-dark);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    /* ─── MODAL FOOTER ─── */
+    .modal-footer {
+      padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      background: #fafcfd;
+    }
+    .footer-left { font-size: 12px; color: var(--muted); }
+    .footer-left span { font-weight: 600; color: var(--ieee-blue); }
+    .footer-btns { display: flex; gap: 10px; }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.18s;
+    }
+    .btn-outline {
+      background: none;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-outline:hover { border-color: var(--ieee-blue); color: var(--ieee-blue); }
+    .btn-primary {
+      background: var(--ieee-blue);
+      color: #fff;
+      box-shadow: 0 3px 12px rgba(0,102,153,0.25);
+    }
+    .btn-primary:hover { background: var(--ieee-dark); box-shadow: 0 5px 18px rgba(0,102,153,0.35); }
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+      box-shadow: 0 3px 12px rgba(56,161,105,0.3);
+    }
+    .btn-success:hover { background: #276749; }
+
+    /* ─── SUCCESS SCREEN ─── */
+    .success-screen {
+      text-align: center;
+      padding: 40px 20px;
+      animation: panelIn 0.3s ease;
+    }
+    .success-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--success), #68d391);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 34px;
+      color: #fff;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 24px rgba(56,161,105,0.35);
+    }
+    .success-screen h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      color: var(--ieee-dark);
+      margin-bottom: 8px;
+    }
+    .success-screen p { font-size: 14px; color: var(--muted); max-width: 380px; margin: 0 auto 6px; line-height: 1.6; }
+    .success-ref { font-size: 13px; background: var(--ieee-light); border-radius: 8px; padding: 10px 20px; display: inline-block; margin-top: 14px; color: var(--ieee-dark); font-weight: 600; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 580px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: 1; }
+      .modal-body { padding: 20px 16px; }
+      .modal-footer { flex-direction: column; gap: 12px; align-items: stretch; text-align: center; }
+      .footer-btns { justify-content: center; }
+      .step-label { display: none; }
+      .modal-title { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -160,7 +617,10 @@
 
   <!-- REGISTER NOW button -->
   <div>
-    <a href="#" class="btn-register-now">Register Now</a>
+    <button class="btn-register-now" onclick="openModal()">
+    <i class="fa fa-pen-to-square"></i> Register Now
+  </button>
+    <!-- <a href="#" class="btn-register-now">Register Now</a> -->
   </div>
 
   <!-- Accommodation -->
@@ -488,6 +948,527 @@
 <a href="#top" class="back-to-top" style="opacity:0;">
   <span class="cookie-icon"><i class="fas fa-circle-dot"></i></span>Back to Top
 </a>
+
+
+<!-- ═══════════════════════════ MODAL OVERLAY ═══════════════════════════ -->
+<div class="modal-overlay" id="regOverlay" onclick="overlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+      <div class="modal-header-top">
+        <div>
+          <div class="modal-title" id="modalTitle">Conference Registration</div>
+          <div class="modal-subtitle">IEEE AFRICON 2027 &nbsp;·&nbsp; Accra, Ghana</div>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close"><i class="fa fa-xmark"></i></button>
+      </div>
+
+      <!-- STEP BAR -->
+      <div class="step-bar" id="stepBar">
+        <div class="step-item">
+          <div class="step-circle active" id="sc1">1</div>
+          <div class="step-label active" id="sl1">Personal Info</div>
+        </div>
+        <div class="step-connector" id="conn1"></div>
+        <div class="step-item">
+          <div class="step-circle" id="sc2">2</div>
+          <div class="step-label" id="sl2">Paper & Role</div>
+        </div>
+        <div class="step-connector" id="conn2"></div>
+        <div class="step-item">
+          <div class="step-circle" id="sc3">3</div>
+          <div class="step-label" id="sl3">Payment</div>
+        </div>
+        <div class="step-connector" id="conn3"></div>
+        <div class="step-item">
+          <div class="step-circle" id="sc4">4</div>
+          <div class="step-label" id="sl4">Confirm</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <!-- ── STEP 1: Personal Info ── -->
+      <div class="step-panel active" id="panel1">
+        <div class="section-head">
+          <div class="section-head-icon"><i class="fa fa-user"></i></div>
+          <div><h3>Personal Information</h3><p>Your contact and identification details</p></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Designation <span class="req">*</span></label>
+            <select class="form-control" id="designation">
+              <option value="">Select designation…</option>
+              <option>Prof.</option><option>Dr.</option><option>Engr.</option>
+              <option>Mr.</option><option>Mrs.</option><option>Ms.</option><option>Mx.</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label>Full Name of Corresponding Author / Participant <span class="req">*</span></label>
+            <input class="form-control" type="text" id="fullName" placeholder="e.g. Kwame Mensah" />
+          </div>
+
+          <div class="form-group">
+            <label>Email Address <span class="req">*</span></label>
+            <input class="form-control" type="email" id="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number <span class="req">*</span></label>
+            <input class="form-control" type="tel" id="phone" placeholder="+233 20 000 0000" />
+          </div>
+
+          <div class="form-group full">
+            <label>Gender <span class="req">*</span></label>
+            <div class="radio-group" id="genderGroup">
+              <label class="radio-pill" onclick="selectPill(this,'genderGroup')">
+                <input type="radio" name="gender" value="Male" /> <span class="dot"></span> Male
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'genderGroup')">
+                <input type="radio" name="gender" value="Female" /> <span class="dot"></span> Female
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'genderGroup')">
+                <input type="radio" name="gender" value="Other" /> <span class="dot"></span> Other / Prefer not to say
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label>Street Address</label>
+            <input class="form-control" type="text" id="address" placeholder="Street / P.O. Box" />
+          </div>
+
+          <div class="form-group">
+            <label>City</label>
+            <input class="form-control" type="text" id="city" placeholder="City" />
+          </div>
+
+          <div class="form-group">
+            <label>Country <span class="req">*</span></label>
+            <select class="form-control" id="country">
+              <option value="">Select country…</option>
+              <option>Ghana</option><option>Nigeria</option><option>South Africa</option>
+              <option>Kenya</option><option>Ethiopia</option><option>Egypt</option>
+              <option>Cameroon</option><option>Rwanda</option><option>Tanzania</option>
+              <option>Uganda</option><option>Senegal</option><option>Morocco</option>
+              <option>Algeria</option><option>Tunisia</option><option>Zimbabwe</option>
+              <option>Zambia</option><option>Mozambique</option><option>Angola</option>
+              <option>Ivory Coast</option><option>Mali</option>
+              <option>United States</option><option>United Kingdom</option>
+              <option>Germany</option><option>France</option><option>Canada</option>
+              <option>India</option><option>China</option><option>Japan</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Institution / Affiliation <span class="req">*</span></label>
+            <input class="form-control" type="text" id="institution" placeholder="University / Company name" />
+          </div>
+
+          <div class="form-group">
+            <label>Department / Faculty</label>
+            <input class="form-control" type="text" id="department" placeholder="e.g. Electrical Engineering" />
+          </div>
+
+          <div class="form-group full">
+            <label>Are you an IEEE Member? <span class="req">*</span></label>
+            <div class="yn-group" id="ieeeGroup">
+              <button type="button" class="yn-btn yes" onclick="setYN('ieeeGroup','yes')"><i class="fa fa-check"></i> Yes</button>
+              <button type="button" class="yn-btn no" onclick="setYN('ieeeGroup','no')"><i class="fa fa-xmark"></i> No</button>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label>Are you a Student? <span class="req">*</span></label>
+            <div class="yn-group" id="studentGroup">
+              <button type="button" class="yn-btn yes" onclick="setYN('studentGroup','yes')"><i class="fa fa-check"></i> Yes</button>
+              <button type="button" class="yn-btn no" onclick="setYN('studentGroup','no')"><i class="fa fa-xmark"></i> No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Paper & Role ── -->
+      <div class="step-panel" id="panel2">
+        <div class="section-head">
+          <div class="section-head-icon"><i class="fa fa-file-lines"></i></div>
+          <div><h3>Paper Details &amp; Role</h3><p>Submission and participation information</p></div>
+        </div>
+
+        <div class="form-note">
+          <i class="fa fa-circle-info" style="margin-right:6px;color:var(--ieee-blue)"></i>
+          If you are not presenting a paper, you may leave the paper fields blank.
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Paper ID</label>
+            <input class="form-control" type="text" id="paperId" placeholder="e.g. AFRICON-0042" />
+          </div>
+
+          <div class="form-group full" style="grid-column:2/3; grid-row:1;">
+            <!-- spacer intentional — Paper Title spans full below -->
+          </div>
+
+          <div class="form-group full">
+            <label>Paper Title</label>
+            <input class="form-control" type="text" id="paperTitle" placeholder="Full title of your accepted paper" />
+          </div>
+
+          <div class="form-group full">
+            <label>Your Role <span class="req">*</span></label>
+            <div class="radio-group" id="roleGroup">
+              <label class="radio-pill" onclick="selectPill(this,'roleGroup')">
+                <input type="radio" name="role" value="Author" /> <span class="dot"></span> Author (Presenting)
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'roleGroup')">
+                <input type="radio" name="role" value="Participant" /> <span class="dot"></span> Participant (Non-Author)
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'roleGroup')">
+                <input type="radio" name="role" value="Co-Author" /> <span class="dot"></span> Co-Author (Not Presenting)
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label>Co-Author(s)</label>
+            <div class="coauthor-list" id="coauthorList">
+              <div class="coauthor-entry">
+                <input class="form-control" type="text" placeholder="Co-author full name" />
+                <button type="button" class="btn-remove-coauthor" onclick="removeCoauthor(this)" title="Remove"><i class="fa fa-trash-can"></i></button>
+              </div>
+            </div>
+            <button type="button" class="btn-add-coauthor" onclick="addCoauthor()">
+              <i class="fa fa-plus"></i> Add Co-Author
+            </button>
+          </div>
+
+          <div class="form-group full">
+            <label>Preferred Presentation Mode <span class="req">*</span></label>
+            <div class="radio-group" id="presentGroup">
+              <label class="radio-pill" onclick="selectPill(this,'presentGroup')">
+                <input type="radio" name="present" value="In-Person" /> <span class="dot"></span> <i class="fa fa-person" style="font-size:12px"></i> In-Person
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'presentGroup')">
+                <input type="radio" name="present" value="Online" /> <span class="dot"></span> <i class="fa fa-video" style="font-size:12px"></i> Online / Virtual
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Payment ── -->
+      <div class="step-panel" id="panel3">
+        <div class="section-head">
+          <div class="section-head-icon"><i class="fa fa-credit-card"></i></div>
+          <div><h3>Payment Information</h3><p>Upload your payment proof and details</p></div>
+        </div>
+
+        <div class="form-note">
+          <i class="fa fa-triangle-exclamation" style="margin-right:6px;color:var(--accent2)"></i>
+          Please complete your bank transfer or wire payment first, then fill in the details below. Registration is confirmed only after payment verification.
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Transaction ID / Receipt No. <span class="req">*</span></label>
+            <input class="form-control" type="text" id="txnId" placeholder="e.g. TXN-2027-XXXXXX" />
+          </div>
+
+          <div class="form-group">
+            <label>Date of Payment <span class="req">*</span></label>
+            <input class="form-control" type="date" id="payDate" />
+          </div>
+
+          <div class="form-group full">
+            <label>Type of Payment <span class="req">*</span></label>
+            <div class="radio-group" id="payTypeGroup">
+              <label class="radio-pill" onclick="selectPill(this,'payTypeGroup')">
+                <input type="radio" name="payType" value="Swift" /> <span class="dot"></span> <i class="fa fa-globe" style="font-size:11px"></i> SWIFT Transfer
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'payTypeGroup')">
+                <input type="radio" name="payType" value="Wire" /> <span class="dot"></span> <i class="fa fa-building-columns" style="font-size:11px"></i> Wire Transfer
+              </label>
+              <label class="radio-pill" onclick="selectPill(this,'payTypeGroup')">
+                <input type="radio" name="payType" value="Bank" /> <span class="dot"></span> <i class="fa fa-money-bill-wave" style="font-size:11px"></i> Bank (In-Person)
+              </label>
+            </div>
+          </div>
+
+          <div id="swiftCodeGroup" class="form-group full" style="display:none;">
+            <label>SWIFT Code</label>
+            <input class="form-control" type="text" id="swiftCode" placeholder="e.g. GHANAGHAAXXX" style="letter-spacing:1px;" />
+          </div>
+
+          <div class="form-group full">
+            <label>Upload Payment Receipt <span class="req">*</span></label>
+            <div class="upload-zone" id="uploadZone">
+              <input type="file" id="receiptFile" accept=".pdf,.jpg,.jpeg,.png" onchange="fileChosen()" />
+              <div class="upload-icon"><i class="fa fa-cloud-arrow-up"></i></div>
+              <div class="upload-text">Drag &amp; drop or <span>browse file</span></div>
+              <div class="upload-text" style="font-size:11px; margin-top:4px;">PDF, JPG or PNG · max 5 MB</div>
+              <div class="upload-filename" id="uploadFilename"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Confirm / Review ── -->
+      <div class="step-panel" id="panel4">
+        <div class="section-head">
+          <div class="section-head-icon"><i class="fa fa-list-check"></i></div>
+          <div><h3>Review &amp; Submit</h3><p>Verify your details before submitting</p></div>
+        </div>
+
+        <div class="form-note" style="margin-bottom:20px;">
+          <i class="fa fa-circle-info" style="margin-right:6px;color:var(--ieee-blue)"></i>
+          Please review your registration details carefully. Once submitted, changes must be made by contacting the registration team.
+        </div>
+
+        <div id="summaryBox" style="display:flex;flex-direction:column;gap:10px;"></div>
+      </div>
+
+      <!-- ── SUCCESS SCREEN ── -->
+      <div class="step-panel" id="panelSuccess">
+        <div class="success-screen">
+          <div class="success-icon"><i class="fa fa-check"></i></div>
+          <h3>Registration Submitted!</h3>
+          <p>Thank you for registering for <strong>IEEE AFRICON 2027</strong>. A confirmation email has been sent to your address.</p>
+          <p style="margin-top:8px;">Your registration will be confirmed upon payment verification by the team.</p>
+          <div class="success-ref" id="successRef"></div>
+          <br />
+          <button class="btn btn-outline" onclick="closeModal()" style="margin-top:8px;">Close</button>
+        </div>
+      </div>
+
+    </div><!-- /modal-body -->
+
+    <!-- FOOTER -->
+    <div class="modal-footer" id="modalFooter">
+      <div class="footer-left">Step <span id="footerStep">1</span> of 4</div>
+      <div class="footer-btns">
+        <button class="btn btn-outline" id="btnBack" onclick="goBack()" style="display:none;">
+          <i class="fa fa-arrow-left"></i> Back
+        </button>
+        <button class="btn btn-primary" id="btnNext" onclick="goNext()">
+          Next <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /modal -->
+</div><!-- /modal-overlay -->
+
+<!-- ═══════════════════════════ SCRIPT ═══════════════════════════ -->
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  /* ── Modal open / close ── */
+  function openModal() {
+    document.getElementById('regOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('regOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function overlayClick(e) {
+    if (e.target === document.getElementById('regOverlay')) closeModal();
+  }
+
+  /* ── Radio pills ── */
+  function selectPill(el, groupId) {
+    document.querySelectorAll('#' + groupId + ' .radio-pill').forEach(p => p.classList.remove('selected'));
+    el.classList.add('selected');
+    el.querySelector('input').checked = true;
+
+    // Show/hide SWIFT code input
+    if (groupId === 'payTypeGroup') {
+      const val = el.querySelector('input').value;
+      document.getElementById('swiftCodeGroup').style.display = val === 'Swift' ? 'block' : 'none';
+    }
+  }
+
+  /* ── Yes / No buttons ── */
+  function setYN(groupId, choice) {
+    const g = document.getElementById(groupId);
+    g.querySelectorAll('.yn-btn').forEach(b => b.classList.remove('active'));
+    g.querySelector('.' + choice).classList.add('active');
+    g.dataset.value = choice;
+  }
+
+  /* ── Co-authors ── */
+  function addCoauthor() {
+    const list = document.getElementById('coauthorList');
+    const div = document.createElement('div');
+    div.className = 'coauthor-entry';
+    div.innerHTML = `<input class="form-control" type="text" placeholder="Co-author full name" />
+      <button type="button" class="btn-remove-coauthor" onclick="removeCoauthor(this)" title="Remove"><i class="fa fa-trash-can"></i></button>`;
+    list.appendChild(div);
+  }
+  function removeCoauthor(btn) {
+    const list = document.getElementById('coauthorList');
+    if (list.children.length > 1) btn.closest('.coauthor-entry').remove();
+    else btn.closest('.coauthor-entry').querySelector('input').value = '';
+  }
+
+  /* ── File upload ── */
+  function fileChosen() {
+    const f = document.getElementById('receiptFile').files[0];
+    const el = document.getElementById('uploadFilename');
+    if (f) { el.textContent = '✓ ' + f.name; el.style.display = 'block'; }
+  }
+
+  /* ── Step navigation ── */
+  function updateStepUI() {
+    const isSuccess = currentStep > totalSteps;
+
+    // Panels
+    for (let i = 1; i <= totalSteps; i++) {
+      document.getElementById('panel' + i).classList.toggle('active', i === currentStep && !isSuccess);
+    }
+    document.getElementById('panelSuccess').classList.toggle('active', isSuccess);
+
+    // Step circles
+    for (let i = 1; i <= totalSteps; i++) {
+      const sc = document.getElementById('sc' + i);
+      const sl = document.getElementById('sl' + i);
+      sc.classList.remove('active', 'done');
+      sl.classList.remove('active');
+      if (i < currentStep) { sc.classList.add('done'); sc.innerHTML = '<i class="fa fa-check" style="font-size:10px"></i>'; }
+      else if (i === currentStep && !isSuccess) { sc.classList.add('active'); sc.textContent = i; sl.classList.add('active'); }
+      else sc.textContent = i;
+    }
+
+    // Connectors
+    for (let i = 1; i <= totalSteps - 1; i++) {
+      document.getElementById('conn' + i).classList.toggle('done', i < currentStep);
+    }
+
+    // Footer
+    document.getElementById('footerStep').textContent = Math.min(currentStep, totalSteps);
+    document.getElementById('btnBack').style.display = (currentStep > 1 && !isSuccess) ? 'inline-flex' : 'none';
+
+    const btnNext = document.getElementById('btnNext');
+    if (isSuccess) {
+      document.getElementById('modalFooter').style.display = 'none';
+    } else if (currentStep === totalSteps) {
+      btnNext.className = 'btn btn-success';
+      btnNext.innerHTML = '<i class="fa fa-paper-plane"></i> Submit Registration';
+    } else {
+      btnNext.className = 'btn btn-primary';
+      btnNext.innerHTML = 'Next <i class="fa fa-arrow-right"></i>';
+    }
+  }
+
+  function goNext() {
+    if (!validateStep(currentStep)) return;
+    if (currentStep === totalSteps) {
+      submitForm();
+      return;
+    }
+    if (currentStep === totalSteps - 1) buildSummary();
+    currentStep++;
+    updateStepUI();
+    document.querySelector('.modal-body').scrollTop = 0;
+  }
+
+  function goBack() {
+    if (currentStep > 1) { currentStep--; updateStepUI(); document.querySelector('.modal-body').scrollTop = 0; }
+  }
+
+  /* ── Simple validation ── */
+  function validateStep(step) {
+    const required = {
+      1: ['fullName','email','country','institution'],
+      2: [],
+      3: ['txnId','payDate'],
+      4: []
+    };
+    let ok = true;
+    (required[step] || []).forEach(id => {
+      const el = document.getElementById(id);
+      if (el && !el.value.trim()) {
+        el.style.borderColor = 'var(--error)';
+        el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+        ok = false;
+      }
+    });
+    if (!ok) {
+      const body = document.querySelector('.modal-body');
+      const firstErr = body.querySelector('[style*="var(--error)"]');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return ok;
+  }
+
+  /* ── Summary builder ── */
+  function buildSummary() {
+    const rows = [
+      ['Name', v('fullName')],
+      ['Designation', v('designation')],
+      ['Email', v('email')],
+      ['Phone', v('phone')],
+      ['Gender', checkedRadio('gender')],
+      ['Country', v('country')],
+      ['City', v('city')],
+      ['Institution', v('institution')],
+      ['Department', v('department')],
+      ['IEEE Member', ynVal('ieeeGroup')],
+      ['Student', ynVal('studentGroup')],
+      ['Paper ID', v('paperId') || '—'],
+      ['Paper Title', v('paperTitle') || '—'],
+      ['Role', checkedRadio('role') || '—'],
+      ['Presentation Mode', checkedRadio('present') || '—'],
+      ['Transaction ID', v('txnId')],
+      ['Payment Date', v('payDate')],
+      ['Payment Type', checkedRadio('payType') || '—'],
+    ];
+
+    let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
+    rows.forEach(([label, val]) => {
+      html += `<div style="background:var(--ieee-light);border-radius:8px;padding:10px 14px;">
+        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:3px;">${label}</div>
+        <div style="font-size:13px;color:var(--text);font-weight:500;">${val || '—'}</div>
+      </div>`;
+    });
+    html += '</div>';
+
+    const file = document.getElementById('receiptFile').files[0];
+    if (file) html += `<div style="margin-top:10px;background:#f0fdf4;border-radius:8px;padding:10px 14px;font-size:13px;color:var(--success);font-weight:600;"><i class="fa fa-paperclip" style="margin-right:6px;"></i>${file.name}</div>`;
+
+    document.getElementById('summaryBox').innerHTML = html;
+  }
+
+  function v(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function checkedRadio(name) { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; }
+  function ynVal(groupId) {
+    const g = document.getElementById(groupId);
+    return g && g.dataset.value ? (g.dataset.value === 'yes' ? 'Yes' : 'No') : '—';
+  }
+
+  /* ── Submit ── */
+  function submitForm() {
+    const ref = 'AFC27-' + Math.random().toString(36).substr(2,8).toUpperCase();
+    document.getElementById('successRef').textContent = 'Reference: ' + ref;
+    currentStep = totalSteps + 1;
+    updateStepUI();
+  }
+
+  /* ── Init ── */
+  updateStepUI();
+
+  /* Keyboard ESC */
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
