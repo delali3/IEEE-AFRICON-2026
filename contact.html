@@ -50,6 +50,13 @@
       .btn-send:hover {
         background: var(--ieee-dark-blue);
       }
+      .form-status {
+        display: none;
+        margin-top: 12px;
+        padding: 10px 12px;
+        border-left: 4px solid var(--ieee-blue);
+        background: #eef7fb;
+      }
       .contact-info {
         list-style: none;
         margin-bottom: 30px;
@@ -151,20 +158,14 @@
         <ul class="contact-info">
           <li>
             <i class="fa fa-envelope"></i> &nbsp;
-            <a href="mailto:info@ieee-africon2027.org"
-              >info@ieee-africon2027.org</a
-            >
+            <a href="#message">Use the contact form below</a>
           </li>
           <li>
             <i class="fa fa-map-marker-alt"></i> &nbsp; GIMPA, Accra, Ghana
           </li>
           <li>
-            <i class="fab fa-x-twitter"></i> &nbsp;
-            <a href="#">@IEEEAfricon2027</a>
-          </li>
-          <li>
             <i class="fab fa-linkedin-in"></i> &nbsp;
-            <a href="#">IEEE AFRICON 2027</a>
+            <a href="https://www.linkedin.com/company/ieee-africon" target="_blank" rel="noopener">IEEE AFRICON on LinkedIn</a>
           </li>
         </ul>
 
@@ -172,9 +173,7 @@
         <ul class="contact-info">
           <li>
             <i class="fa fa-envelope"></i> &nbsp;
-            <a href="mailto:tpc@ieee-africon2027.org"
-              >tpc@ieee-africon2027.org</a
-            >
+            <a href="#message">Use the contact form below and select Paper Submission</a>
           </li>
         </ul>
 
@@ -182,14 +181,13 @@
         <ul class="contact-info">
           <li>
             <i class="fa fa-envelope"></i> &nbsp;
-            <a href="mailto:registration@ieee-africon2027.org"
-              >registration@ieee-africon2027.org</a
-            >
+            <a href="#message">Use the contact form below and select Registration</a>
           </li>
         </ul>
 
-        <h2 style="margin-top: 36px">Send Us a Message</h2>
-        <form class="contact-form" action="#" method="post">
+        <h2 id="message" style="margin-top: 36px">Send Us a Message</h2>
+        <form class="contact-form" id="contactForm" action="form-handler.php" method="post">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input
@@ -234,6 +232,7 @@
           <button type="submit" class="btn-send">
             <i class="fa fa-paper-plane"></i> &nbsp; Send Message
           </button>
+          <div class="form-status" id="contactStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -241,10 +240,12 @@
     <footer class="site-footer">
       <nav class="footer-nav">
         <a href="index.html">Home</a>
-        <a href="sitemap.html">Sitemap</a>
-        <a href="accessibility.html">Accessibility</a>
-        <a href="nondiscrimination.html">Nondiscrimination Policy</a>
-        <a href="terms.html">Terms and Conditions</a>
+        <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">Sitemap</a>
+        <a href="https://www.ieee.org/accessibility-statement.html" target="_blank" rel="noopener">Accessibility</a>
+        <a href="https://www.ieee.org/about/corporate/governance/p9-26.html" target="_blank" rel="noopener">Nondiscrimination Policy</a>
+        <a href="https://events.ieee.org/planning-basics/event-registration/policies-terms-conditions/" target="_blank" rel="noopener">Event Terms and Conditions</a>
+        <a href="https://events.ieee.org/planning-basics/general-guidelines/ieee-event-conduct-and-safety-statement-for-conferences/" target="_blank" rel="noopener">Event Conduct &amp; Safety</a>
+        <a href="https://www.ieee.org/about/contact.html" target="_blank" rel="noopener">IEEE Contact</a>
         <a
           href="https://www.ieee.org/security/privacy-policy.html"
           target="_blank"
@@ -255,12 +256,8 @@
         <p class="footer-copy">
           &copy; Copyright 2027 IEEE &ndash; All rights reserved.
         </p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.linkedin.com/company/ieee-africon" target="_blank" rel="noopener" aria-label="IEEE AFRICON on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </footer>
@@ -269,5 +266,34 @@
       Top</a
     >
     <script src="assets/js/main.js"></script>
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const button = form.querySelector("button[type='submit']");
+        const status = document.getElementById("contactStatus");
+        const payload = Object.fromEntries(new FormData(form).entries());
+        payload.type = "contact";
+        button.disabled = true;
+        status.style.display = "block";
+        status.textContent = "Sending your message...";
+        try {
+          const endpoint = location.pathname.endsWith(".html") ? "form-handler.php" : "/form-handler.php";
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const result = await response.json();
+          if (!response.ok || !result.ok) throw new Error(result.message || "Submission failed");
+          form.reset();
+          status.textContent = "Your message was sent successfully. A copy has been emailed to you.";
+        } catch (error) {
+          status.textContent = "We could not send your message. Please try again later or contact the organizing committee through IEEE Region 8.";
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
   </body>
 </html>

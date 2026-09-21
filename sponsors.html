@@ -26,13 +26,20 @@
         flex-wrap: wrap;
         gap: 16px;
       }
+      .sponsor-grid > p,
+      .sponsor-grid > br {
+        display: none !important;
+      }
       .sponsor-box {
         width: 180px;
         height: 90px;
         border: 1px solid #ddd;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 4px;
+        float: none !important;
         background: #fafafa;
         font-size: 12px;
         color: #999;
@@ -196,13 +203,11 @@
 
         <h2 id="exhibitors" style="margin-top: 36px">Exhibitors</h2>
         <p>
-          Exhibitor registration for IEEE AFRICON 2027 is now open. Showcase
-          your products, services, and innovations to over 500 engineers,
-          researchers, and industry professionals. Contact&nbsp;Us at
-          <a href="mailto:sponsors@ieee-africon2027.org"
-            >sponsors@ieee-africon2027.org</a
-          >
-          for exhibition floor plans and booking.
+          Exhibitor enquiries for IEEE AFRICON 2027 are now open. Showcase
+          your products, services, and innovations to an international audience
+          of engineers, researchers, students, and industry professionals. Use
+          the <a href="contact.html#message">conference contact form</a> and
+          select <strong>Sponsorship</strong> for exhibition floor plans and booking.
         </p>
 
         <h2 id="opportunities" style="margin-top: 36px">
@@ -255,7 +260,7 @@
               <td>—</td>
             </tr>
             <tr>
-              <td>Keynote session branding</td>
+              <td>Plenary-area sponsor acknowledgement (technical content remains independent)</td>
               <td class="check">✔</td>
               <td>—</td>
               <td>—</td>
@@ -278,11 +283,18 @@
           </tbody>
         </table>
 
+        <p>
+          Sponsorship recognition is commercial and does not provide influence
+          over peer review, paper acceptance, keynote selection, speaker
+          invitations, awards, or any other technical programme decision.
+          Package prices and benefits remain subject to approval by the AFRICON
+          Steering Committee and IEEE Region 8.
+        </p>
+
         <p style="margin-top: 20px">
-          To discuss sponsorship opportunities, please contact:
-          <a href="mailto:sponsors@ieee-africon2027.org"
-            >sponsors@ieee-africon2027.org</a
-          >
+          To discuss sponsorship opportunities, use the
+          <a href="contact.html#message">conference contact form</a> and select
+          <strong>Sponsorship</strong>.
         </p>
       </div>
     </div>
@@ -290,10 +302,12 @@
     <footer class="site-footer">
       <nav class="footer-nav">
         <a href="index.html">Home</a>
-        <a href="sitemap.html">Sitemap</a>
-        <a href="accessibility.html">Accessibility</a>
-        <a href="nondiscrimination.html">Nondiscrimination Policy</a>
-        <a href="terms.html">Terms and Conditions</a>
+        <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">Sitemap</a>
+        <a href="https://www.ieee.org/accessibility-statement.html" target="_blank" rel="noopener">Accessibility</a>
+        <a href="https://www.ieee.org/about/corporate/governance/p9-26.html" target="_blank" rel="noopener">Nondiscrimination Policy</a>
+        <a href="https://events.ieee.org/planning-basics/event-registration/policies-terms-conditions/" target="_blank" rel="noopener">Event Terms and Conditions</a>
+        <a href="https://events.ieee.org/planning-basics/general-guidelines/ieee-event-conduct-and-safety-statement-for-conferences/" target="_blank" rel="noopener">Event Conduct &amp; Safety</a>
+        <a href="https://www.ieee.org/about/contact.html" target="_blank" rel="noopener">IEEE Contact</a>
         <a
           href="https://www.ieee.org/security/privacy-policy.html"
           target="_blank"
@@ -304,12 +318,8 @@
         <p class="footer-copy">
           &copy; Copyright 2027 IEEE &ndash; All rights reserved.
         </p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.linkedin.com/company/ieee-africon" target="_blank" rel="noopener" aria-label="IEEE AFRICON on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </footer>

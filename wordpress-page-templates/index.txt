@@ -1,235 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IEEE AFRICON 2027 - Home</title>
-    <meta
-      name="description"
-      content="IEEE AFRICON 2027 - The 18th edition of the biennial IEEE AFRICON conference. Harnessing Emerging Technologies for Africa's sustainable development."
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
-      /* Slider slides with background image */
-      .slide {
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-      }
-
-      .slide-1,
-      .slide-2,
-      .slide-3,
-      .slide-4,
-      .slide-5,
-      .slide-6,
-      .slide-7,
-      .slide-8 {
-        background-image: url("assets/images/1.jpeg");
-      }
-
-      .mini-slide-1 {
-        background-image: url("assets/images/1.jpeg");
-      }
-
-      /* Logo SVG inline styles */
-      .logo-africa-map {
-        fill: #2d6a2d;
-      }
-
-      /* Important dates box */
-      .info-box {
-        background: #f0f8ff;
-        border-left: 4px solid var(--ieee-blue);
-        padding: 16px 20px;
-        margin: 20px 0;
-        font-size: 13px;
-      }
-
-      .info-box h3 {
-        font-size: 14px;
-        font-weight: bold;
-        color: var(--ieee-blue);
-        margin-bottom: 10px;
-      }
-
-      .info-box ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .info-box ul li {
-        padding: 4px 0;
-        border-bottom: 1px dotted #ccc;
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
-      .info-box ul li:last-child {
-        border-bottom: none;
-      }
-
-      .info-box ul li .date-label {
-        font-weight: bold;
-        color: var(--text-dark);
-      }
-
-      .info-box ul li .date-val {
-        color: var(--ieee-blue);
-        font-weight: bold;
-        white-space: nowrap;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- ===== TOP BAR ===== -->
-    <div class="top-bar">
-      <div class="container">
-        <a href="https://www.ieee.org" target="_blank" rel="noopener"
-          >IEEE.org</a
-        >
-        <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener"
-          >IEEE <em>Xplore</em> Digital Library</a
-        >
-        <a href="https://standards.ieee.org" target="_blank" rel="noopener"
-          >IEEE Standards</a
-        >
-        <a href="https://spectrum.ieee.org" target="_blank" rel="noopener"
-          >IEEE Spectrum</a
-        >
-        <a
-          href="https://www.ieee.org/sitemap.html"
-          target="_blank"
-          rel="noopener"
-          >More Sites</a
-        >
-      </div>
-    </div>
-
-    <!-- ===== HEADER ===== -->
-    <header class="site-header" id="top">
-      <div class="header-inner">
-        <div class="header-logo">
-          <img
-            src="assets/images/logo/logo.png"
-            alt="IEEE AFRICON 2027 Logo"
-            class="africon-logo"
-          />
-          <div class="header-tagline">
-            <span class="venue">GIMPA, Accra, Ghana &nbsp;||&nbsp;September 23-25, 2027</span>
-            <span class="theme">Harnessing Emerging Technologies for Africa's sustainable development</span>
-          </div>
-        </div>
-        <div class="header-right">
-          <button class="search-icon"><i class="fa fa-search"></i></button>
-          <img
-            src="assets/images/ieee-logo.svg"
-            alt="IEEE"
-            class="ieee-logo"
-          />
-        </div>
-      </div>
-      <div class="search-box"><div class="container"><input type="text" placeholder="Search IEEE AFRICON 2027..." /></div></div>
-    </header>
-    
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="main-nav" aria-label="Main navigation">
-      <div class="container">
-        <ul class="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li>
-            <a href="about.html">About</a>
-            <div class="dropdown">
-              <a href="about.html#conference">About the Conference</a>
-              <a href="about.html#organizers">Organizers</a>
-              <a href="about.html#history">History</a>
-            </div>
-          </li>
-          <li>
-            <a href="program.html">Program</a>
-            <div class="dropdown">
-              <a href="program.html#technical">Technical Program</a>
-              <a href="program.html#keynote">Keynote Speakers</a>
-              <a href="program.html#workshops">Workshops &amp; Tutorials</a>
-              <a href="program.html#schedule">Schedule</a>
-            </div>
-          </li>
-          <li>
-            <a href="authors.html">Authors</a>
-            <div class="dropdown">
-              <a href="authors.html#cfp">Call for Papers</a>
-              <a href="authors.html#submission">Paper Submission</a>
-              <a href="authors.html#guidelines">Author Guidelines</a>
-              <a href="authors.html#dates">Important Dates</a>
-            </div>
-          </li>
-          <li>
-            <a href="registration.html">Registration</a>
-            <div class="dropdown">
-              <a href="registration.html#fees">Registration Fees</a>
-              <a href="registration.html#register">Register Now</a>
-              <a href="registration.html#visa">Visa Information</a>
-            </div>
-          </li>
-          <li>
-            <a href="sponsors.html">Sponsors/Exhibitors</a>
-            <div class="dropdown">
-              <a href="sponsors.html#sponsors">Our Sponsors</a>
-              <a href="sponsors.html#exhibitors">Exhibitors</a>
-              <a href="sponsors.html#opportunities"
-                >Sponsorship Opportunities</a
-              >
-            </div>
-          </li>
-          <li>
-            <a href="venue.html">Venue&nbsp;&amp;&nbsp;Travel</a>
-            <div class="dropdown">
-              <a href="venue.html#venue">Conference Venue</a>
-              <a href="venue.html#accommodation">Accommodation</a>
-              <a href="venue.html#travel">Getting There</a>
-              <a href="venue.html#kigali">About Kigali</a>
-            </div>
-          </li>
-          <li>
-            <a href="speakers.html">Speakers</a>
-            <div class="dropdown">
-              <a href="speakers.html#keynote">Keynote Speakers</a>
-              <a href="speakers.html#invited">Invited Speakers</a>
-            </div>
-          </li>
-          <li>
-            <a href="committees.html">Committees</a>
-            <div class="dropdown">
-              <a href="committees.html#organizing">Organizing Committee</a>
-              <a href="committees.html#technical"
-                >Technical Program Committee</a
-              >
-              <a href="committees.html#steering">Steering Committee</a>
-            </div>
-          </li>
-          <li><a href="contact.html">Contact&nbsp;Us</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- ===== HERO SLIDER ===== -->
-    <section class="hero-slider" aria-label="Homepage slideshow">
+[vc_row full_width="stretch_row_content_no_spaces" el_id="no-top-space"][vc_column]
+[vc_raw_html]CjxzdHlsZT4KLmFmcmljb24tcGFnZXstLWllZWUtYmx1ZTojMDA2Njk5Oy0taWVlZS1kYXJrLWJsdWU6IzAwNGI3MDstLWllZWUtbGlnaHQ6I2VlZjdmYjstLXRleHQtZGFyazojMzMzOy0tdGV4dDojMzMzOy0tbXV0ZWQ6IzY2NzA4NTstLXN1Y2Nlc3M6IzI2NzM0ZDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtjb2xvcjojMzMzO2ZvbnQtc2l6ZToxNHB4O2xpbmUtaGVpZ2h0OjEuNjV9CiNuby10b3Atc3BhY2V7cG9zaXRpb246cmVsYXRpdmUhaW1wb3J0YW50O3RvcDphdXRvIWltcG9ydGFudDttYXJnaW4tdG9wOi05NXB4IWltcG9ydGFudDttYXJnaW4tYm90dG9tOjAhaW1wb3J0YW50O3BhZGRpbmctdG9wOjAhaW1wb3J0YW50O3BvaW50ZXItZXZlbnRzOm5vbmUhaW1wb3J0YW50fQojbm8tdG9wLXNwYWNlPi52Y19jb2x1bW5fY29udGFpbmVyPi52Y19jb2x1bW4taW5uZXJ7cGFkZGluZy10b3A6MCFpbXBvcnRhbnR9CiNuby10b3Atc3BhY2UgLmFmcmljb24tcGFnZXtwb2ludGVyLWV2ZW50czphdXRvIWltcG9ydGFudH0KLmFmcmljb24tcGFnZSAqe2JveC1zaXppbmc6Ym9yZGVyLWJveH0KLmFmcmljb24tcGFnZSAucGFnZS1oZXJve2JhY2tncm91bmQ6IzAwNjY5OTtjb2xvcjojZmZmO3BhZGRpbmc6MzJweCAwO21hcmdpbjowIDAgNDBweH0KLmFmcmljb24tcGFnZSAucGFnZS1oZXJvIC5jb250YWluZXJ7bWF4LXdpZHRoOjEyMDBweDttYXJnaW46MCBhdXRvO3BhZGRpbmc6MCAxNXB4fQouYWZyaWNvbi1wYWdlIC5wYWdlLWhlcm8gaDF7Y29sb3I6I2ZmZiFpbXBvcnRhbnQ7Zm9udC1zaXplOjI4cHghaW1wb3J0YW50O2xpbmUtaGVpZ2h0OjEuMjUhaW1wb3J0YW50O2ZvbnQtd2VpZ2h0OjcwMDttYXJnaW46MCAwIDZweCFpbXBvcnRhbnQ7bGV0dGVyLXNwYWNpbmc6MH0KLmFmcmljb24tcGFnZSAuYWZyaWNvbi1icmVhZGNydW1ie21hcmdpbjowO3BhZGRpbmc6MDtiYWNrZ3JvdW5kOnRyYW5zcGFyZW50O2JvcmRlcjowO2NvbG9yOnJnYmEoMjU1LDI1NSwyNTUsLjg1KTtmb250LXNpemU6MTNweH0KLmFmcmljb24tcGFnZSAuYWZyaWNvbi1icmVhZGNydW1iIGF7Y29sb3I6cmdiYSgyNTUsMjU1LDI1NSwuODUpIWltcG9ydGFudDtmb250LXNpemU6MTNweH0KLmFmcmljb24tcGFnZSAucGFnZS1sYXlvdXR7bWF4LXdpZHRoOjEyMDBweDttYXJnaW46MCBhdXRvO3BhZGRpbmc6MCAxNXB4IDYwcHg7ZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczoyMjBweCBtaW5tYXgoMCwxZnIpO2dhcDo0MHB4fQouYWZyaWNvbi1wYWdlIC5zaWRlYmFye2JvcmRlci1yaWdodDoxcHggc29saWQgI2RkZDtwYWRkaW5nLXJpZ2h0OjI0cHh9Ci5hZnJpY29uLXBhZ2UgLnNpZGViYXIgaDN7Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6NzAwO2NvbG9yOiMwMDY2OTk7dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2xldHRlci1zcGFjaW5nOjA7bWFyZ2luOjAgMCAxMnB4O3BhZGRpbmc6MCAwIDZweDtib3JkZXItYm90dG9tOjJweCBzb2xpZCAjMDA2Njk5fQouYWZyaWNvbi1wYWdlIC5zaWRlYmFyIHVse2xpc3Qtc3R5bGU6bm9uZTttYXJnaW46MDtwYWRkaW5nOjB9Ci5hZnJpY29uLXBhZ2UgLnNpZGViYXIgbGl7bWFyZ2luOjA7cGFkZGluZzowfQouYWZyaWNvbi1wYWdlIC5zaWRlYmFyIGF7ZGlzcGxheTpibG9jaztwYWRkaW5nOjdweCAwO2NvbG9yOiMzMzM7Zm9udC1zaXplOjEzcHg7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgI2VlZTt0ZXh0LWRlY29yYXRpb246bm9uZX0KLmFmcmljb24tcGFnZSAuc2lkZWJhciBhOmhvdmVyLC5hZnJpY29uLXBhZ2UgLnNpZGViYXIgYS5hY3RpdmV7Y29sb3I6IzAwNjY5OX0KLmFmcmljb24tcGFnZSAucGFnZS1jb250ZW50e21pbi13aWR0aDowfQouYWZyaWNvbi1wYWdlIC5wYWdlLWNvbnRlbnQgaDJ7Zm9udC1zaXplOjIwcHg7bGluZS1oZWlnaHQ6MS4zNTtmb250LXdlaWdodDo3MDA7Y29sb3I6IzAwNjY5OTttYXJnaW46MCAwIDE2cHg7cGFkZGluZzowIDAgOHB4O2JvcmRlci1ib3R0b206MnB4IHNvbGlkICMwMDY2OTk7bGV0dGVyLXNwYWNpbmc6MH0KLmFmcmljb24tcGFnZSAucGFnZS1jb250ZW50IGgyOm5vdCg6Zmlyc3QtY2hpbGQpe21hcmdpbi10b3A6MzZweH0KLmFmcmljb24tcGFnZSAucGFnZS1jb250ZW50IGgze2ZvbnQtc2l6ZToxNnB4O2xpbmUtaGVpZ2h0OjEuNDtmb250LXdlaWdodDo3MDA7Y29sb3I6IzMzMzttYXJnaW46MjRweCAwIDEwcHg7bGV0dGVyLXNwYWNpbmc6MH0KLmFmcmljb24tcGFnZSBwe21hcmdpbjowIDAgMTRweDtsaW5lLWhlaWdodDoxLjd9Ci5hZnJpY29uLXBhZ2UgLnBhZ2UtY29udGVudCB1bHttYXJnaW46MTBweCAwIDE0cHggMjBweDtwYWRkaW5nOjA7bGluZS1oZWlnaHQ6MS43fQouYWZyaWNvbi1wYWdlIHRhYmxle3dpZHRoOjEwMCU7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO21hcmdpbjoyMHB4IDA7Zm9udC1zaXplOjEzcHh9Ci5hZnJpY29uLXBhZ2UgdGh7YmFja2dyb3VuZDojMDA2Njk5O2NvbG9yOiNmZmY7cGFkZGluZzoxMHB4IDE0cHg7dGV4dC1hbGlnbjpsZWZ0fQouYWZyaWNvbi1wYWdlIHRke3BhZGRpbmc6OXB4IDE0cHg7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgI2VlZX0KLmFmcmljb24tcGFnZSB0cjpudGgtY2hpbGQoZXZlbikgdGR7YmFja2dyb3VuZDojZjhmOGY4fQouYWZyaWNvbi1wYWdlIGltZ3ttYXgtd2lkdGg6MTAwJTtoZWlnaHQ6YXV0b30KLmFmcmljb24tcGFnZSBhe2NvbG9yOiMwMDY2OTl9Ci5hZnJpY29uLWNvbnRhY3QgLmNvbnRhY3QtaW5mb3ttYXJnaW4tbGVmdDowIWltcG9ydGFudDtwYWRkaW5nLWxlZnQ6MCFpbXBvcnRhbnR9Ci5hZnJpY29uLWNvbnRhY3QgLmNvbnRhY3QtaW5mbyBsaXtkaXNwbGF5OmZsZXghaW1wb3J0YW50O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6MTBweH0KLmFmcmljb24tY29udGFjdCAuY29udGFjdC1pbmZvIGxpIGl7ZGlzcGxheTppbmxpbmUtYmxvY2shaW1wb3J0YW50O2ZsZXg6MCAwIDIwcHg7d2lkdGg6MjBweCFpbXBvcnRhbnQ7dGV4dC1hbGlnbjpjZW50ZXJ9Ci5hZnJpY29uLWNvbnRhY3QgLmNvbnRhY3QtaW5mbyBsaSBhe2Rpc3BsYXk6aW5saW5lIWltcG9ydGFudH0KQG1lZGlhKG1heC13aWR0aDo3NjhweCl7LmFmcmljb24tcGFnZSAucGFnZS1sYXlvdXR7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmcjtnYXA6MjRweH0uYWZyaWNvbi1wYWdlIC5zaWRlYmFye2JvcmRlci1yaWdodDowO2JvcmRlci1ib3R0b206MXB4IHNvbGlkICNkZGQ7cGFkZGluZzowIDAgMjBweH0uYWZyaWNvbi1wYWdlIC5wYWdlLWhlcm97bWFyZ2luLWJvdHRvbToyOHB4fS5hZnJpY29uLXBhZ2UgdGFibGV7ZGlzcGxheTpibG9jaztvdmVyZmxvdy14OmF1dG87d2hpdGUtc3BhY2U6bm93cmFwfX0KPC9zdHlsZT4K[/vc_raw_html]
+[vc_raw_html]PHN0eWxlPg0KICAgICAgLyogU2xpZGVyIHNsaWRlcyB3aXRoIGJhY2tncm91bmQgaW1hZ2UgKi8NCiAgICAgIC5zbGlkZSB7DQogICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7DQogICAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjsNCiAgICAgICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDsNCiAgICAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsNCiAgICAgIH0NCg0KICAgICAgLnNsaWRlLTEsDQogICAgICAuc2xpZGUtMiwNCiAgICAgIC5zbGlkZS0zLA0KICAgICAgLnNsaWRlLTQsDQogICAgICAuc2xpZGUtNSwNCiAgICAgIC5zbGlkZS02LA0KICAgICAgLnNsaWRlLTcsDQogICAgICAuc2xpZGUtOCB7DQogICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgiYXNzZXRzL2ltYWdlcy8xLmpwZWciKTsNCiAgICAgIH0NCg0KICAgICAgLm1pbmktc2xpZGUtMSB7DQogICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgiYXNzZXRzL2ltYWdlcy8xLmpwZWciKTsNCiAgICAgIH0NCg0KICAgICAgLyogTG9nbyBTVkcgaW5saW5lIHN0eWxlcyAqLw0KICAgICAgLmxvZ28tYWZyaWNhLW1hcCB7DQogICAgICAgIGZpbGw6ICMyZDZhMmQ7DQogICAgICB9DQoNCiAgICAgIC8qIEltcG9ydGFudCBkYXRlcyBib3ggKi8NCiAgICAgIC5pbmZvLWJveCB7DQogICAgICAgIGJhY2tncm91bmQ6ICNmMGY4ZmY7DQogICAgICAgIGJvcmRlci1sZWZ0OiA0cHggc29saWQgdmFyKC0taWVlZS1ibHVlKTsNCiAgICAgICAgcGFkZGluZzogMTZweCAyMHB4Ow0KICAgICAgICBtYXJnaW46IDIwcHggMDsNCiAgICAgICAgZm9udC1zaXplOiAxM3B4Ow0KICAgICAgfQ0KDQogICAgICAuaW5mby1ib3ggaDMgew0KICAgICAgICBmb250LXNpemU6IDE0cHg7DQogICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOw0KICAgICAgICBjb2xvcjogdmFyKC0taWVlZS1ibHVlKTsNCiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDsNCiAgICAgIH0NCg0KICAgICAgLmluZm8tYm94IHVsIHsNCiAgICAgICAgbGlzdC1zdHlsZTogbm9uZTsNCiAgICAgICAgcGFkZGluZzogMDsNCiAgICAgIH0NCg0KICAgICAgLmluZm8tYm94IHVsIGxpIHsNCiAgICAgICAgcGFkZGluZzogNHB4IDA7DQogICAgICAgIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgI2NjYzsNCiAgICAgICAgZGlzcGxheTogZmxleDsNCiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOw0KICAgICAgICBnYXA6IDEwcHg7DQogICAgICB9DQoNCiAgICAgIC5pbmZvLWJveCB1bCBsaTpsYXN0LWNoaWxkIHsNCiAgICAgICAgYm9yZGVyLWJvdHRvbTogbm9uZTsNCiAgICAgIH0NCg0KICAgICAgLmluZm8tYm94IHVsIGxpIC5kYXRlLWxhYmVsIHsNCiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7DQogICAgICAgIGNvbG9yOiB2YXIoLS10ZXh0LWRhcmspOw0KICAgICAgfQ0KDQogICAgICAuaW5mby1ib3ggdWwgbGkgLmRhdGUtdmFsIHsNCiAgICAgICAgY29sb3I6IHZhcigtLWllZWUtYmx1ZSk7DQogICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOw0KICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwOw0KICAgICAgfQ0KICAgIDwvc3R5bGU+[/vc_raw_html]
+[vc_column_text css=".vc_custom_africon_home{margin:0 !important;padding:0 !important;}"]
+<div class="africon-page africon-home">
+<section class="hero-slider" aria-label="Homepage slideshow">
       <div class="slide slide-1 active">
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <h1>Welcome to Africon 2027</h1>
           <p>23-25 September 2027, GIMPA, Accra, Ghana</p>
-          <a href="authors.html#submission" class="btn-submit"
+          <a href="https://2027.ieee-africon.org/authors/#submission" class="btn-submit"
             >Submit Your Paper Now</a
           >
         </div>
@@ -243,7 +23,7 @@
             development
           </h1>
           <p>The 18th Edition of the Biennial IEEE AFRICON Conference</p>
-          <a href="about.html" class="btn-submit">Learn More</a>
+          <a href="https://2027.ieee-africon.org/about/" class="btn-submit">Learn More</a>
         </div>
       </div>
 
@@ -255,7 +35,7 @@
             Submit your research across AI, Communications, Power Systems,
             Cybersecurity &amp; more
           </p>
-          <a href="authors.html#cfp" class="btn-submit">View Call for Papers</a>
+          <a href="https://2027.ieee-africon.org/authors/#cfp" class="btn-submit">View Call for Papers</a>
         </div>
       </div>
 
@@ -267,7 +47,7 @@
             Experience the vibrant &amp; innovative capital of Africa at the
             heart of AFRICON 2027
           </p>
-          <a href="venue.html" class="btn-submit"
+          <a href="https://2027.ieee-africon.org/venue/" class="btn-submit"
             >Venue&nbsp;&amp;&nbsp;Travel</a
           >
         </div>
@@ -281,7 +61,7 @@
             World-class plenary presentations by leading researchers and
             industry experts
           </p>
-          <a href="speakers.html" class="btn-submit">Meet Our Speakers</a>
+          <a href="https://2027.ieee-africon.org/speakers/" class="btn-submit">Meet Our Speakers</a>
         </div>
       </div>
 
@@ -293,7 +73,7 @@
             Secure your spot at the premier IEEE conference on the African
             continent
           </p>
-          <a href="registration.html" class="btn-submit">Register Now</a>
+          <a href="https://2027.ieee-africon.org/registration/" class="btn-submit">Register Now</a>
         </div>
       </div>
 
@@ -304,7 +84,7 @@
           <p>
             Hands-on sessions covering emerging and cutting-edge technologies
           </p>
-          <a href="program.html#workshops" class="btn-submit">View Program</a>
+          <a href="https://2027.ieee-africon.org/program/#workshops" class="btn-submit">View Program</a>
         </div>
       </div>
 
@@ -316,7 +96,7 @@
             Partner with us to showcase your innovations to Africa's brightest
             minds
           </p>
-          <a href="sponsors.html" class="btn-submit"
+          <a href="https://2027.ieee-africon.org/sponsors/" class="btn-submit"
             >Sponsorship Opportunities</a
           >
         </div>
@@ -544,51 +324,6 @@
         </div>
       </div>
     </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="site-footer">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">Sitemap</a>
-        <a href="https://www.ieee.org/accessibility-statement.html" target="_blank" rel="noopener">Accessibility</a>
-        <a href="https://www.ieee.org/about/corporate/governance/p9-26.html" target="_blank" rel="noopener">Nondiscrimination Policy</a>
-        <a href="https://events.ieee.org/planning-basics/event-registration/policies-terms-conditions/" target="_blank" rel="noopener">Event Terms and Conditions</a>
-        <a href="https://events.ieee.org/planning-basics/general-guidelines/ieee-event-conduct-and-safety-statement-for-conferences/" target="_blank" rel="noopener">Event Conduct &amp; Safety</a>
-        <a href="https://www.ieee.org/about/contact.html" target="_blank" rel="noopener">IEEE Contact</a>
-        <a
-          href="https://www.ieee.org/security/privacy-policy.html"
-          target="_blank"
-          rel="noopener"
-          >IEEE Privacy Policy</a
-        >
-      </nav>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          &copy; Copyright 2027 IEEE &ndash; All rights reserved. Use of this
-          website signifies your agreement to the IEEE Terms and Conditions.<br />
-          A public charity, IEEE is the world&rsquo;s largest technical
-          professional organization dedicated to advancing technology for the
-          benefit of humanity.<br />
-          <small>Powered by ghprofit.com</small>
-        </p>
-
-        <div class="footer-social" aria-label="Social media links">
-          <a href="https://www.linkedin.com/company/ieee-africon" target="_blank" rel="noopener" aria-label="IEEE AFRICON on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <a
-      href="#top"
-      class="back-to-top"
-      aria-label="Back to top"
-      style="opacity: 0"
-    >
-      <span class="cookie-icon"><i class="fas fa-circle-dot"></i></span>
-      Back to Top
-    </a>
-
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+</div>
+[/vc_column_text]
+[/vc_column][/vc_row]
