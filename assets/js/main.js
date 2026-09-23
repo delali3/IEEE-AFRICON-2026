@@ -2,9 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  const page = document.querySelector('.africon-home') || document;
+
   /* ---- Hero Slider ---- */
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
+  const slides = page.querySelectorAll('.slide');
+  const dots = page.querySelectorAll('.dot');
   let current = 0;
   let autoplay = true;
   let timer;
@@ -27,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     clearInterval(timer);
   }
 
-  document.querySelector('.slider-arrow.prev')?.addEventListener('click', () => {
+  page.querySelector('.slider-arrow.prev')?.addEventListener('click', () => {
     stopAutoplay();
     showSlide(current - 1);
     startAutoplay();
   });
 
-  document.querySelector('.slider-arrow.next')?.addEventListener('click', () => {
+  page.querySelector('.slider-arrow.next')?.addEventListener('click', () => {
     stopAutoplay();
     showSlide(current + 1);
     startAutoplay();
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const playPauseBtn = document.querySelector('.slider-play-pause');
+  const playPauseBtn = page.querySelector('.slider-play-pause');
   playPauseBtn?.addEventListener('click', () => {
     autoplay = !autoplay;
     playPauseBtn.textContent = autoplay ? '❚❚' : '▶';
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---- Mini Venue Slider ---- */
-  const miniSlides = document.querySelectorAll('.mini-slide');
+  const miniSlides = page.querySelectorAll('.mini-slide');
   let miniCurrent = 0;
   let miniTimer;
 
@@ -74,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
     miniTimer = setInterval(() => showMiniSlide(miniCurrent + 1), 4000);
   }
 
-  document.querySelector('.mini-btn.mini-play')?.addEventListener('click', () => {
+  page.querySelector('.mini-btn.mini-play')?.addEventListener('click', () => {
     clearInterval(miniTimer);
     miniTimer = setInterval(() => showMiniSlide(miniCurrent + 1), 4000);
   });
 
-  document.querySelector('.mini-btn.mini-pause')?.addEventListener('click', () => {
+  page.querySelector('.mini-btn.mini-pause')?.addEventListener('click', () => {
     clearInterval(miniTimer);
   });
 
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const backToTop = document.querySelector('.back-to-top');
 
   window.addEventListener('scroll', () => {
+    if (!backToTop) return;
     if (window.scrollY > 300) {
       backToTop.style.opacity = '1';
     } else {

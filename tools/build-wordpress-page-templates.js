@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const outputDir = path.join(root, "wordpress-page-templates");
 const siteBase = "https://2027.ieee-africon.org";
+const uploadsBase = `${siteBase}/wp-content/uploads/sites/882`;
 const pages = [
   "index",
   "about",
@@ -17,11 +18,26 @@ const pages = [
   "travel-support",
   "venue",
 ];
-const rawContentPages = new Set(["contact", "registration"]);
+// WordPress applies wpautop to vc_column_text. Complex layouts must remain raw
+// so injected paragraph elements cannot become slider or grid children.
+const rawContentPages = new Set(["index", "contact", "registration"]);
 const wordpressSlugs = { contact: "contact-us" };
 
 function encodedRawHtml(value) {
   return `[vc_raw_html]${Buffer.from(value, "utf8").toString("base64")}[/vc_raw_html]`;
+}
+
+function removeHeaderOverlap(styleBlock) {
+  return styleBlock.replace(
+    /\[vc_raw_html\]([A-Za-z0-9+/=\s]+)\[\/vc_raw_html\]/,
+    (_match, encodedStyles) => {
+      const styles = Buffer.from(encodedStyles.trim(), "base64")
+        .toString("utf8")
+        .replace("margin-top:-95px!important;", "");
+
+      return encodedRawHtml(styles);
+    },
+  );
 }
 
 function extract(html, startMarker, endMarker) {
@@ -64,7 +80,8 @@ function rewriteLinks(markup) {
     .replace(/href="([a-z-]+)\.html(#[^"]*)?"/g, (match, slug, hash = "") =>
       slugs.has(slug) ? `href="${siteBase}/${wordpressSlugs[slug] || slug}/${hash}"` : match,
     )
-    .replace(/action="form-handler\.php"/g, 'action="/form-handler.php"');
+    .replace(/action="form-handler\.php"/g, 'action="/form-handler.php"')
+    .replace(/assets\/images\//g, `${uploadsBase}/`);
 }
 
 function inlineStyles(html) {
@@ -86,14 +103,21 @@ const baseStyleMatch = existingAbout.match(/^([\s\S]*?\[\/vc_raw_html\])/);
 if (!baseStyleMatch) {
   throw new Error("Could not recover the shared WordPress page styles from about.txt");
 }
-const sharedStyleBlock = baseStyleMatch[1];
+const sharedStyleBlock = removeHeaderOverlap(baseStyleMatch[1]);
 
 for (const name of pages) {
   const sourcePath = path.join(root, `${name}.html`);
   const html = fs.readFileSync(sourcePath, "utf8");
   const content = rewriteLinks(pageContent(name, html));
-  const styles = inlineStyles(html);
-  const scripts = inlineScripts(html);
+  const styles = name === "index"
+    ? `<style>${rewriteLinks(fs.readFileSync(path.join(root, "assets/css/wordpress-home.css"), "utf8"))}</style>`
+    : inlineStyles(html);
+  const scripts = [
+    inlineScripts(html),
+    name === "index"
+      ? `<script>${fs.readFileSync(path.join(root, "assets/js/main.js"), "utf8")}</script>`
+      : "",
+  ].filter(Boolean).join("\n");
   const cssBlock = styles ? `\n${encodedRawHtml(styles)}` : "";
   const scriptBlock = scripts ? `\n${encodedRawHtml(scripts)}` : "";
   const wrapperClass = name === "index" ? "africon-home" : `africon-${name}`;

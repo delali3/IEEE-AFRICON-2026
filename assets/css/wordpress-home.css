@@ -1,0 +1,258 @@
+/* Homepage styles scoped to the exported WordPress content. */
+#page .africon-home {
+  --ieee-blue: #006699;
+  --ieee-dark-blue: #00497a;
+  --text-dark: #333333;
+  --white: #ffffff;
+  color: var(--text-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+#page .africon-home,
+#page .africon-home *,
+#page .africon-home *::before,
+#page .africon-home *::after {
+  box-sizing: border-box;
+}
+
+#page .africon-home .hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+#page .africon-home .slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background-image: url("assets/images/1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#page .africon-home .slide.active {
+  display: flex;
+  align-items: center;
+}
+
+#page .africon-home .slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 60, 100, 0.45);
+}
+
+#page .africon-home .slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  padding: 40px 60px;
+}
+
+#page .africon-home .slide-content h1 {
+  margin: 0 0 12px;
+  color: var(--white) !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#page .africon-home .slide-content p {
+  margin: 0 0 24px;
+  padding: 0;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+#page .africon-home .btn-submit,
+#page .africon-home .btn-submit:visited {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid var(--white);
+  background: transparent;
+  color: var(--white) !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+#page .africon-home .btn-submit:hover,
+#page .africon-home .btn-submit:focus {
+  background: var(--white);
+  color: var(--ieee-blue) !important;
+  text-decoration: none;
+}
+
+#page .africon-home .slider-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  padding: 12px 16px;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+}
+
+#page .africon-home .slider-arrow:hover,
+#page .africon-home .slider-arrow:focus {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+#page .africon-home .slider-arrow.prev { left: 10px; }
+#page .africon-home .slider-arrow.next { right: 10px; }
+
+#page .africon-home .slider-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 60px;
+  z-index: 10;
+}
+
+#page .africon-home .slider-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#page .africon-home .slider-play-pause,
+#page .africon-home .dot,
+#page .africon-home .mini-btn {
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  line-height: 1;
+}
+
+#page .africon-home .slider-play-pause {
+  padding: 0 4px;
+  font-size: 20px;
+}
+
+#page .africon-home .dot {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+#page .africon-home .dot.active { background: var(--white); }
+
+#page .africon-home .main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+
+#page .africon-home .two-col,
+#page .africon-home .venue-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+}
+
+#page .africon-home .two-col { margin-bottom: 40px; }
+
+#page .africon-home .message-column h2,
+#page .africon-home .venue-section h2 {
+  margin: 0 0 16px;
+  padding: 0 0 8px;
+  border-bottom: 2px solid var(--ieee-blue);
+  color: var(--text-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+#page .africon-home .message-column p,
+#page .africon-home .venue-section p {
+  margin: 0 0 14px;
+  padding: 0;
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+#page .africon-home .signature {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#page .africon-home .venue-section {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+#page .africon-home .mini-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #000;
+}
+
+#page .africon-home .mini-slide {
+  display: none;
+  width: 100%;
+  height: 280px;
+  background-position: center;
+  background-size: cover;
+}
+
+#page .africon-home .mini-slide.active { display: block; }
+
+#page .africon-home .mini-slider-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#page .africon-home .mini-btn {
+  padding: 0 2px;
+  font-size: 16px;
+}
+
+#page .africon-home .mini-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+@media (max-width: 768px) {
+  #page .africon-home .two-col,
+  #page .africon-home .venue-section {
+    grid-template-columns: 1fr;
+  }
+
+  #page .africon-home .slide { height: 350px; }
+
+  #page .africon-home .slide-content { padding: 30px 40px; }
+
+  #page .africon-home .slide-content h1 { font-size: 26px; }
+
+  #page .africon-home .slider-dots { left: 40px; }
+}

@@ -413,7 +413,7 @@ a:hover {
   margin-bottom: 40px;
 }
 
-.col h2 {
+.message-column h2 {
   font-size: 16px;
   font-weight: bold;
   color: var(--text-dark);
@@ -422,14 +422,14 @@ a:hover {
   border-bottom: 2px solid var(--ieee-blue);
 }
 
-.col p {
+.message-column p {
   margin-bottom: 14px;
   font-size: 14px;
   line-height: 1.7;
   color: var(--text-dark);
 }
 
-.col .signature {
+.message-column .signature {
   margin-top: 20px;
   font-size: 14px;
   line-height: 1.8;
