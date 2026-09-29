@@ -193,11 +193,8 @@
 
       <div class="page-content">
         <p>
-          Committee membership is being reviewed with the AFRICON Steering
-          Committee to broaden international IEEE Region 8 representation,
-          particularly on the Technical Program Committee. IEEE grades are
-          retained where confirmed. Institutional affiliations and countries
-          marked as pending will be replaced after the member verifies them.
+          Meet the committee members supporting the planning and delivery of
+          IEEE AFRICON 2026.
         </p>
         <div class="committee-section" id="chairs-content">
           <h2>Conference Chairs</h2>
@@ -598,14 +595,6 @@
     <script>
       // Committee accordion functionality
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".committee-list li").forEach((item) => {
-          if (!item.querySelector(".affil")) {
-            const affiliation = document.createElement("span");
-            affiliation.className = "affil";
-            affiliation.textContent = "Institution and country: verification pending";
-            item.appendChild(affiliation);
-          }
-        });
         const committeeLinks = document.querySelectorAll(".committee-link");
         const committeeSections =
           document.querySelectorAll(".committee-section");

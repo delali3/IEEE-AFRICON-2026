@@ -69,11 +69,8 @@
 
       <div class="page-content">
         <p>
-          Committee membership is being reviewed with the AFRICON Steering
-          Committee to broaden international IEEE Region 8 representation,
-          particularly on the Technical Program Committee. IEEE grades are
-          retained where confirmed. Institutional affiliations and countries
-          marked as pending will be replaced after the member verifies them.
+          Meet the committee members supporting the planning and delivery of
+          IEEE AFRICON 2027.
         </p>
         <div class="committee-section" id="chairs-content">
           <h2>Conference Chairs</h2>
@@ -169,7 +166,7 @@
           <h2>Finance and Sponsorship Committee</h2>
           <ul class="committee-list">
             <li>
-              <span class="role">Interim Chair - appointment subject to Steering Committee and IEEE Region 8 confirmation</span>
+              <span class="role">Member</span>
               <span class="person">Ms Francine Nana Afiba Arthur (MIEEE)</span>
             </li>
             <li>
@@ -443,5 +440,5 @@
     </div>
 </div>
 [/vc_column_text]
-[vc_raw_html]PHNjcmlwdD4NCiAgICAgIC8vIENvbW1pdHRlZSBhY2NvcmRpb24gZnVuY3Rpb25hbGl0eQogICAgICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJET01Db250ZW50TG9hZGVkIiwgZnVuY3Rpb24gKCkgewogICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoIi5jb21taXR0ZWUtbGlzdCBsaSIpLmZvckVhY2goKGl0ZW0pID0+IHsKICAgICAgICAgIGlmICghaXRlbS5xdWVyeVNlbGVjdG9yKCIuYWZmaWwiKSkgewogICAgICAgICAgICBjb25zdCBhZmZpbGlhdGlvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNwYW4iKTsKICAgICAgICAgICAgYWZmaWxpYXRpb24uY2xhc3NOYW1lID0gImFmZmlsIjsKICAgICAgICAgICAgYWZmaWxpYXRpb24udGV4dENvbnRlbnQgPSAiSW5zdGl0dXRpb24gYW5kIGNvdW50cnk6IHZlcmlmaWNhdGlvbiBwZW5kaW5nIjsKICAgICAgICAgICAgaXRlbS5hcHBlbmRDaGlsZChhZmZpbGlhdGlvbik7CiAgICAgICAgICB9CiAgICAgICAgfSk7CiAgICAgICAgY29uc3QgY29tbWl0dGVlTGlua3MgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIuY29tbWl0dGVlLWxpbmsiKTsNCiAgICAgICAgY29uc3QgY29tbWl0dGVlU2VjdGlvbnMgPQ0KICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoIi5jb21taXR0ZWUtc2VjdGlvbiIpOw0KDQogICAgICAgIGNvbW1pdHRlZUxpbmtzLmZvckVhY2goKGxpbmspID0+IHsNCiAgICAgICAgICBsaW5rLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgZnVuY3Rpb24gKGUpIHsNCiAgICAgICAgICAgIGUucHJldmVudERlZmF1bHQoKTsNCg0KICAgICAgICAgICAgLy8gUmVtb3ZlIGFjdGl2ZSBjbGFzcyBmcm9tIGFsbCBsaW5rcyBhbmQgc2VjdGlvbnMNCiAgICAgICAgICAgIGNvbW1pdHRlZUxpbmtzLmZvckVhY2goKGwpID0+IGwuY2xhc3NMaXN0LnJlbW92ZSgiYWN0aXZlIikpOw0KICAgICAgICAgICAgY29tbWl0dGVlU2VjdGlvbnMuZm9yRWFjaCgoc2VjdGlvbikgPT4NCiAgICAgICAgICAgICAgc2VjdGlvbi5jbGFzc0xpc3QucmVtb3ZlKCJhY3RpdmUiKSwNCiAgICAgICAgICAgICk7DQoNCiAgICAgICAgICAgIC8vIEFkZCBhY3RpdmUgY2xhc3MgdG8gY2xpY2tlZCBsaW5rDQogICAgICAgICAgICB0aGlzLmNsYXNzTGlzdC5hZGQoImFjdGl2ZSIpOw0KDQogICAgICAgICAgICAvLyBTaG93IGNvcnJlc3BvbmRpbmcgc2VjdGlvbg0KICAgICAgICAgICAgY29uc3QgdGFyZ2V0SWQgPSB0aGlzLmdldEF0dHJpYnV0ZSgiZGF0YS10YXJnZXQiKTsNCiAgICAgICAgICAgIGNvbnN0IHRhcmdldFNlY3Rpb24gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCh0YXJnZXRJZCk7DQogICAgICAgICAgICBpZiAodGFyZ2V0U2VjdGlvbikgew0KICAgICAgICAgICAgICB0YXJnZXRTZWN0aW9uLmNsYXNzTGlzdC5hZGQoImFjdGl2ZSIpOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgIH0pOw0KICAgICAgICB9KTsNCiAgICAgIH0pOw0KICAgIDwvc2NyaXB0Pg==[/vc_raw_html]
+[vc_raw_html]PHNjcmlwdD4NCiAgICAgIC8vIENvbW1pdHRlZSBhY2NvcmRpb24gZnVuY3Rpb25hbGl0eQogICAgICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJET01Db250ZW50TG9hZGVkIiwgZnVuY3Rpb24gKCkgewogICAgICAgIGNvbnN0IGNvbW1pdHRlZUxpbmtzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiLmNvbW1pdHRlZS1saW5rIik7DQogICAgICAgIGNvbnN0IGNvbW1pdHRlZVNlY3Rpb25zID0NCiAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCIuY29tbWl0dGVlLXNlY3Rpb24iKTsNCg0KICAgICAgICBjb21taXR0ZWVMaW5rcy5mb3JFYWNoKChsaW5rKSA9PiB7DQogICAgICAgICAgbGluay5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uIChlKSB7DQogICAgICAgICAgICBlLnByZXZlbnREZWZhdWx0KCk7DQoNCiAgICAgICAgICAgIC8vIFJlbW92ZSBhY3RpdmUgY2xhc3MgZnJvbSBhbGwgbGlua3MgYW5kIHNlY3Rpb25zDQogICAgICAgICAgICBjb21taXR0ZWVMaW5rcy5mb3JFYWNoKChsKSA9PiBsLmNsYXNzTGlzdC5yZW1vdmUoImFjdGl2ZSIpKTsNCiAgICAgICAgICAgIGNvbW1pdHRlZVNlY3Rpb25zLmZvckVhY2goKHNlY3Rpb24pID0+DQogICAgICAgICAgICAgIHNlY3Rpb24uY2xhc3NMaXN0LnJlbW92ZSgiYWN0aXZlIiksDQogICAgICAgICAgICApOw0KDQogICAgICAgICAgICAvLyBBZGQgYWN0aXZlIGNsYXNzIHRvIGNsaWNrZWQgbGluaw0KICAgICAgICAgICAgdGhpcy5jbGFzc0xpc3QuYWRkKCJhY3RpdmUiKTsNCg0KICAgICAgICAgICAgLy8gU2hvdyBjb3JyZXNwb25kaW5nIHNlY3Rpb24NCiAgICAgICAgICAgIGNvbnN0IHRhcmdldElkID0gdGhpcy5nZXRBdHRyaWJ1dGUoImRhdGEtdGFyZ2V0Iik7DQogICAgICAgICAgICBjb25zdCB0YXJnZXRTZWN0aW9uID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQodGFyZ2V0SWQpOw0KICAgICAgICAgICAgaWYgKHRhcmdldFNlY3Rpb24pIHsNCiAgICAgICAgICAgICAgdGFyZ2V0U2VjdGlvbi5jbGFzc0xpc3QuYWRkKCJhY3RpdmUiKTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgICB9KTsNCiAgICAgICAgfSk7DQogICAgICB9KTsNCiAgICA8L3NjcmlwdD4=[/vc_raw_html]
 [/vc_column][/vc_row]
