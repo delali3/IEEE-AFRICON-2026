@@ -20,7 +20,7 @@ const pages = [
 ];
 // WordPress applies wpautop to vc_column_text. Complex layouts must remain raw
 // so injected paragraph elements cannot become slider or grid children.
-const rawContentPages = new Set(["index", "contact", "registration"]);
+const rawContentPages = new Set(pages);
 const wordpressSlugs = { contact: "contact-us" };
 
 function encodedRawHtml(value) {
@@ -42,9 +42,12 @@ function removeHeaderOverlap(styleBlock) {
       // Use a unique content ID: the theme may also use no-top-space.
       // Hide only the breadcrumbs, never an ancestor that can contain navigation.
       const breadcrumbStyles = "\n#africon-page-row{position:relative!important;top:auto!important;margin-top:0!important;margin-bottom:0!important;padding-top:0!important;pointer-events:auto!important;isolation:isolate;z-index:0}\n#africon-page-row>.vc_column_container>.vc_column-inner{padding-top:0!important}\n.entry-container:has(.africon-page) #breadcrumbs{display:none!important}\n";
-      const updatedStyles = styles.includes(breadcrumbStyles.trim())
-        ? styles
-        : styles.replace("</style>", `${breadcrumbStyles}</style>`);
+      const paragraphStyles = "\n.africon-page .page-content p{width:100%!important;max-width:none!important;white-space:normal!important}\n";
+      const fullWidthStyles = styles.includes(paragraphStyles.trim())
+        ? styles : styles.replace("</style>", `${paragraphStyles}</style>`);
+      const updatedStyles = fullWidthStyles.includes(breadcrumbStyles.trim())
+        ? fullWidthStyles
+        : fullWidthStyles.replace("</style>", `${breadcrumbStyles}</style>`);
 
       return encodedRawHtml(updatedStyles);
     },
@@ -121,7 +124,7 @@ for (const name of pages) {
   const sourcePath = path.join(root, `${name}.html`);
   const html = fs.readFileSync(sourcePath, "utf8");
   let content = rewriteLinks(pageContent(name, html));
-  if (name === "committees") {
+  if (name !== "index") {
     content = content.replace(/<div class="page-hero">\s*<div class="container">[\s\S]*?<\/div>\s*<\/div>\s*/, "");
   }
   const styles = name === "index"

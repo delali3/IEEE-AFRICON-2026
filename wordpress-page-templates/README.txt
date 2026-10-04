@@ -23,12 +23,12 @@ Notes:
 - The templates use WPBakery/Visual Composer shortcodes already used by Home.
 - CSS and JavaScript are Base64-encoded inside WPBakery vc_raw_html blocks so
   WordPress does not strip the tags and display the code as visible page text.
-- Contact and Registration markup is also Base64-encoded because WordPress
-  otherwise strips required form controls from ordinary text blocks.
+- All page content uses Base64-encoded raw HTML blocks so WordPress does not
+  convert source line breaks into visible breaks or alter layout and form markup.
 - Shared layout styling is included in each template, so no theme installation
   or additional stylesheet is required.
-- Breadcrumbs are removed from the blue page banners, and the theme's
-  breadcrumb element is hidden on AFRICON template pages.
+- Blue page-title banners are removed from all inner page templates, and
+  the theme's breadcrumb element is hidden on AFRICON template pages.
 - The content row uses its own africon-page-row ID to avoid interfering
   with the theme header and its navigation links.
 - Registration retains its interactive multi-step form and submits to
