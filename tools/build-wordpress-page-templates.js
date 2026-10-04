@@ -28,14 +28,25 @@ function encodedRawHtml(value) {
 }
 
 function removeHeaderOverlap(styleBlock) {
-  return styleBlock.replace(
+  return styleBlock.replace('el_id="no-top-space"', 'el_id="africon-page-row"').replace(
     /\[vc_raw_html\]([A-Za-z0-9+/=\s]+)\[\/vc_raw_html\]/,
     (_match, encodedStyles) => {
       const styles = Buffer.from(encodedStyles.trim(), "base64")
         .toString("utf8")
-        .replace("margin-top:-95px!important;", "");
+        .replace("margin-top:-95px!important;", "")
+        .replace(/#no-top-space[^{}]*\{[^{}]*\}\s*/g, "")
+        .replace(/\.entry-container:has\(\.africon-page\) > \.row:has\(#breadcrumbs\)\{[^{}]*\}/g, "")
+        .replace(/\.africon-page \.africon-breadcrumb(?: a)?\{[^{}]*\}\s*/g, "");
 
-      return encodedRawHtml(styles);
+      // The theme adds a separate breadcrumb row above the page content.
+      // Use a unique content ID: the theme may also use no-top-space.
+      // Hide only the breadcrumbs, never an ancestor that can contain navigation.
+      const breadcrumbStyles = "\n#africon-page-row{position:relative!important;top:auto!important;margin-top:0!important;margin-bottom:0!important;padding-top:0!important;pointer-events:auto!important;isolation:isolate;z-index:0}\n#africon-page-row>.vc_column_container>.vc_column-inner{padding-top:0!important}\n.entry-container:has(.africon-page) #breadcrumbs{display:none!important}\n";
+      const updatedStyles = styles.includes(breadcrumbStyles.trim())
+        ? styles
+        : styles.replace("</style>", `${breadcrumbStyles}</style>`);
+
+      return encodedRawHtml(updatedStyles);
     },
   );
 }
@@ -75,6 +86,7 @@ function pageContent(name, html) {
 function rewriteLinks(markup) {
   const slugs = new Set(pages.filter((page) => page !== "index"));
   return markup
+    .replace(/<div class="breadcrumb">[\s\S]*?<\/div>/g, "")
     .replace(/class="breadcrumb"/g, 'class="africon-breadcrumb"')
     .replace(/href="index\.html(#[^"]*)?"/g, (_match, hash = "") => `href="${siteBase}/${hash}"`)
     .replace(/href="([a-z-]+)\.html(#[^"]*)?"/g, (match, slug, hash = "") =>
@@ -108,7 +120,10 @@ const sharedStyleBlock = removeHeaderOverlap(baseStyleMatch[1]);
 for (const name of pages) {
   const sourcePath = path.join(root, `${name}.html`);
   const html = fs.readFileSync(sourcePath, "utf8");
-  const content = rewriteLinks(pageContent(name, html));
+  let content = rewriteLinks(pageContent(name, html));
+  if (name === "committees") {
+    content = content.replace(/<div class="page-hero">\s*<div class="container">[\s\S]*?<\/div>\s*<\/div>\s*/, "");
+  }
   const styles = name === "index"
     ? `<style>${rewriteLinks(fs.readFileSync(path.join(root, "assets/css/wordpress-home.css"), "utf8"))}</style>`
     : inlineStyles(html);

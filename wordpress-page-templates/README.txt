@@ -27,6 +27,10 @@ Notes:
   otherwise strips required form controls from ordinary text blocks.
 - Shared layout styling is included in each template, so no theme installation
   or additional stylesheet is required.
+- Breadcrumbs are removed from the blue page banners, and the theme's
+  breadcrumb element is hidden on AFRICON template pages.
+- The content row uses its own africon-page-row ID to avoid interfering
+  with the theme header and its navigation links.
 - Registration retains its interactive multi-step form and submits to
   /form-handler.php. Deploy that endpoint at the WordPress web root and
   configure WordPress/PHP outbound mail before enabling public registration.
