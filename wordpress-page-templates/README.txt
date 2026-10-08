@@ -10,10 +10,12 @@ Required WordPress page slugs:
 - About IEEE AFRICON 2027: /about/
 - Home: /
 - Authors: /authors/
+- Call for Reviewers: /call-for-reviewers/
 - Committees: /committees/
 - Contact Us: /contact-us/
 - Technical Program: /program/
 - Registration: /registration/
+- Registration Policies: /registration-policy/
 - Speakers: /speakers/
 - Sponsors & Exhibitors: /sponsors/
 - Travel Support: /travel-support/
@@ -31,8 +33,9 @@ Notes:
   the theme's breadcrumb element is hidden on AFRICON template pages.
 - The content row uses its own africon-page-row ID to avoid interfering
   with the theme header and its navigation links.
-- Registration retains its interactive multi-step form and submits to
-  /form-handler.php. Deploy that endpoint at the WordPress web root and
+- The registration popup and its request button are temporarily disabled.
+  Its multi-step form source remains in registration.html for restoration.
+  Before restoring it, deploy /form-handler.php at the WordPress web root and
   configure WordPress/PHP outbound mail before enabling public registration.
   Set AFRICON_CONTACT_EMAIL and AFRICON_REGISTRATION_EMAIL, or verify the
   WordPress administrator email used as the fallback recipient.

@@ -9,10 +9,12 @@ const pages = [
   "index",
   "about",
   "authors",
+  "call-for-reviewers",
   "committees",
   "contact",
   "program",
   "registration",
+  "registration-policy",
   "speakers",
   "sponsors",
   "travel-support",
@@ -70,9 +72,8 @@ function pageContent(name, html) {
 
   if (name === "registration") {
     const main = extract(html, '<div class="reg-content">', "<!-- FOOTER -->");
-    const modal = extract(html, '<div class="modal-overlay"', "<!-- /modal-overlay -->")
-      + "\n    <!-- /modal-overlay -->";
-    return `${main}\n${modal}`;
+    // Registration popup is temporarily disabled; retain its source for later.
+    return main;
   }
 
   const start = html.indexOf('<div class="page-hero">');
@@ -96,6 +97,7 @@ function rewriteLinks(markup) {
       slugs.has(slug) ? `href="${siteBase}/${wordpressSlugs[slug] || slug}/${hash}"` : match,
     )
     .replace(/action="form-handler\.php"/g, 'action="/form-handler.php"')
+    .replace(/assets\/images\/sponsors\//g, `${uploadsBase}/`)
     .replace(/assets\/images\//g, `${uploadsBase}/`);
 }
 
@@ -131,7 +133,7 @@ for (const name of pages) {
     ? `<style>${rewriteLinks(fs.readFileSync(path.join(root, "assets/css/wordpress-home.css"), "utf8"))}</style>`
     : inlineStyles(html);
   const scripts = [
-    inlineScripts(html),
+    name === "registration" ? "" : inlineScripts(html),
     name === "index"
       ? `<script>${fs.readFileSync(path.join(root, "assets/js/main.js"), "utf8")}</script>`
       : "",

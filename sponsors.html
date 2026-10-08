@@ -63,9 +63,13 @@
         color: #2d8a2d;
         font-weight: bold;
       }
+      .africon-sponsors .sponsor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 24px 0 36px; }
+      .africon-sponsors .sponsor-box { width: 100%; height: 140px; padding: 20px; background: #fff; border-radius: 8px; }
+      .africon-sponsors .sponsor-box img { display: block; max-width: 100%; max-height: 100px; width: auto; height: auto; object-fit: contain; }
+      @media (max-width: 480px) { .africon-sponsors .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .africon-sponsors .sponsor-box { padding: 12px; height: 110px; } }
     </style>
   </head>
-  <body>
+  <body class="africon-sponsors">
     <div class="top-bar">
       <div class="container">
         <a href="https://www.ieee.org" target="_blank">IEEE.org</a>
@@ -149,59 +153,28 @@
       </aside>
 
       <div class="page-content">
-        <h2 id="sponsors">Our Sponsors</h2>
+        <h2 id="sponsors">Sponsors &amp; Exhibitors</h2>
+        <p><strong>IEEE AFRICON 2027</strong> &middot; September 23–25, 2027 &middot; GIMPA, Accra, Ghana</p>
         <p>
           IEEE AFRICON 2027 is grateful for the support of our generous
-          sponsors. Sponsorship announcements will be made progressively.
+          sponsors. Explore sponsorship and exhibition opportunities below.
         </p>
 
-        <div class="sponsor-tier">
-          <h3 style="color: #c9a227">
-            <i class="fa fa-star"></i> Platinum Sponsors
-          </h3>
-          <div class="sponsor-grid tier-platinum">
-            <div class="sponsor-box">
-              Your Logo Here<br /><span
-                style="font-size: 10px; color: var(--ieee-blue)"
-                >Become a Sponsor</span
-              >
-            </div>
-          </div>
+        <div class="sponsor-grid" aria-label="Sponsor logos">
+          <div class="sponsor-box"><img src="assets/images/sponsors/HTP_logo.jpg" alt="HTP" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/IEEE-ComputationalIntelligence.jpeg" alt="IEEE Computational Intelligence" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/IEEE-Foundation.jpeg" alt="IEEE Foundation" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="https://2027.ieee-africon.org/wp-content/uploads/sites/882/IEEEwomen-768x768-1.png" alt="IEEE Women in Engineering" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/IEEE_ExploreLogo.webp" alt="IEEE Xplore" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/logo.png" alt="Sponsor logo" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/MICTSETA-LOGO-FORMATS-21-768x137.png" alt="MICT SETA" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/Proffesional.jpeg" alt="Professional" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/REVTECH-LOGO.jpeg" alt="REVTECH" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/SMC.jpeg" alt="SMC" loading="lazy" decoding="async" /></div>
+          <div class="sponsor-box"><img src="assets/images/sponsors/Tellcom.jpeg" alt="Tellcom" loading="lazy" decoding="async" /></div>
         </div>
 
-        <div class="sponsor-tier">
-          <h3 style="color: #c9a227">
-            <i class="fa fa-star"></i> Gold Sponsors
-          </h3>
-          <div class="sponsor-grid tier-gold">
-            <div class="sponsor-box">
-              Your Logo Here<br /><span
-                style="font-size: 10px; color: var(--ieee-blue)"
-                >Become a Sponsor</span
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="sponsor-tier">
-          <h3 style="color: #aaa">
-            <i class="fa fa-star-half-alt"></i> Silver Sponsors
-          </h3>
-          <div class="sponsor-grid tier-silver">
-            <div class="sponsor-box">Your Logo Here</div>
-          </div>
-        </div>
-
-        <div class="sponsor-tier">
-          <h3 style="color: #c0713c">
-            <i class="fa fa-award"></i> Bronze Sponsors
-          </h3>
-          <div class="sponsor-grid tier-bronze">
-            <div class="sponsor-box">Your Logo Here</div>
-          </div>
-        </div>
-
-        <h2 id="exhibitors" style="margin-top: 36px">Exhibitors</h2>
+                <h2 id="exhibitors" style="margin-top: 36px">Exhibitors</h2>
         <p>
           Exhibitor enquiries for IEEE AFRICON 2027 are now open. Showcase
           your products, services, and innovations to an international audience

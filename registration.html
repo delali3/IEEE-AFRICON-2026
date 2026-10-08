@@ -860,13 +860,7 @@
         the official conference website or a verified conference email.
       </div>
 
-      <!-- REGISTER NOW button -->
-      <div>
-        <button class="btn-register-now" onclick="openModal()">
-          <i class="fa fa-pen-to-square"></i> Submit Registration Request
-        </button>
-        <!-- <a href="#" class="btn-register-now">Register Now</a> -->
-      </div>
+      <!-- Registration requests are temporarily paused. -->
 
       <!-- Accommodation -->
       <p class="reg-section-title">Accommodation</p>
@@ -1002,23 +996,23 @@
         <tbody>
           <tr>
             <td>IEEE Member</td>
-            <td>$ 342.00</td>
-            <td>$ 378.00</td>
+            <td>$ 350.00</td>
+            <td>$ 380.00</td>
           </tr>
           <tr>
             <td>Non IEEE Member</td>
-            <td>$ 410.00</td>
-            <td>$ 460.00</td>
+            <td>$ 400.00</td>
+            <td>$ 450.00</td>
           </tr>
           <tr>
             <td>IEEE Student Member</td>
-            <td>$ 242.00</td>
-            <td>$ 260.00</td>
+            <td>$ 250.00</td>
+            <td>$ 280.00</td>
           </tr>
           <tr>
             <td>Non IEEE Student Member</td>
-            <td>$ 310.00</td>
-            <td>$ 342.00</td>
+            <td>$ 300.00</td>
+            <td>$ 340.00</td>
           </tr>
           <tr>
             <td>IEEE Life Member</td>
@@ -1069,8 +1063,8 @@
         <tbody>
           <tr>
             <td>IEEE Member</td>
-            <td>$ 325.00</td>
-            <td>$ 410.00</td>
+            <td>$ 342.00</td>
+            <td>$ 378.00</td>
           </tr>
           <tr>
             <td>Non IEEE Member</td>
@@ -1081,6 +1075,11 @@
             <td>IEEE Student Member (author not presenting)</td>
             <td>$ 250.00</td>
             <td>$ 275.00</td>
+          </tr>
+          <tr>
+            <td>Non IEEE Student Member</td>
+            <td>$ 270.00</td>
+            <td>$ 285.00</td>
           </tr>
           <tr>
             <td>IEEE Life Member</td>
@@ -1864,6 +1863,8 @@
 
       /* ── Modal open / close ── */
       function openModal() {
+        // Temporarily disabled until registration requests reopen.
+        return;
         document.getElementById("regOverlay").classList.add("open");
         document.body.style.overflow = "hidden";
       }
